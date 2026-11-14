@@ -58,21 +58,25 @@ export default function PortfolioShell() {
           <HomeView
             onSelectRelease={handleSelectRelease}
             onSelectTalent={handleSelectTalent}
-            onNavigateTab={handleTabChange}
+            onOpenNowShowing={openNowShowing}
           />
         );
+      case 'new':
       case 'talents':
         return <TalentsView onSelectTalent={handleSelectTalent} />;
-      case 'library':
-        return <LibraryView onSelectRelease={handleSelectRelease} />;
+      case 'radio':
       case 'about':
         return <AboutView />;
+      case 'library':
+        return <LibraryView onSelectRelease={handleSelectRelease} />;
+      case 'search':
+        return <LibraryView onSelectRelease={handleSelectRelease} />;
       default:
         return (
           <HomeView
             onSelectRelease={handleSelectRelease}
             onSelectTalent={handleSelectTalent}
-            onNavigateTab={handleTabChange}
+            onOpenNowShowing={openNowShowing}
           />
         );
     }

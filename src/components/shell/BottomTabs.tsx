@@ -1,5 +1,6 @@
 import React from 'react';
-import { Home, Users, Library, Info } from 'lucide-react';
+import { Home, Compass, Radio, Library, Search } from 'lucide-react';
+import { GlassNav } from '@zakisheriff/liquid-glass';
 
 interface BottomTabsProps {
   activeTab: string;
@@ -7,34 +8,32 @@ interface BottomTabsProps {
 }
 
 export function BottomTabs({ activeTab, onTabChange }: BottomTabsProps) {
-  const tabs = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'talents', label: 'Talents', icon: Users },
-    { id: 'library', label: 'Library', icon: Library },
-    { id: 'about', label: 'About', icon: Info },
+  const tabKeys = ['home', 'new', 'radio', 'library', 'search'];
+  
+  const navItems = [
+    { label: 'Home', icon: <Home className="w-5 h-5" /> },
+    { label: 'New', icon: <Compass className="w-5 h-5" /> },
+    { label: 'Radio', icon: <Radio className="w-5 h-5" /> },
+    { label: 'Library', icon: <Library className="w-5 h-5" /> },
+    { label: 'Search', icon: <Search className="w-5 h-5" /> },
   ];
 
+  const activeIndex = Math.max(0, tabKeys.indexOf(activeTab));
+
   return (
-    <nav className="absolute bottom-0 left-0 right-0 z-40 px-3 pb-4 pt-2 pointer-events-auto">
-      <div className="glass-dock mx-auto w-full h-15 rounded-full flex items-center justify-around px-2 shadow-2xl">
-        {tabs.map((tab) => {
-          const Icon = tab.icon;
-          const isActive = activeTab === tab.id;
-          return (
-            <button
-              key={tab.id}
-              onClick={() => onTabChange(tab.id)}
-              className={`flex flex-col items-center justify-center w-16 h-11 rounded-full transition-all duration-200 ${
-                isActive
-                  ? 'text-[#ff375f] scale-105 font-medium'
-                  : 'text-zinc-400 hover:text-zinc-200 active:scale-95'
-              }`}
-            >
-              <Icon className="w-5 h-5 mb-0.5" strokeWidth={isActive ? 2.5 : 1.8} />
-              <span className="text-[10px] tracking-tight">{tab.label}</span>
-            </button>
-          );
-        })}
+    <nav className="absolute bottom-2 left-0 right-0 z-40 px-3 pointer-events-auto flex justify-center">
+      <div className="w-full max-w-[390px]">
+        <GlassNav
+          items={navItems}
+          activeIndex={activeIndex}
+          onChange={(index) => {
+            const selectedKey = tabKeys[index] || 'home';
+            onTabChange(selectedKey);
+          }}
+          intensity={6}
+          showLabels={true}
+          style={{ width: '100%', borderRadius: '999px' }}
+        />
       </div>
     </nav>
   );

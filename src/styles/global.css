@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@zakisheriff/liquid-glass/styles.css";
 
 :root {
   --app-bg: #07070a;
