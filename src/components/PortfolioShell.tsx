@@ -101,15 +101,26 @@ export default function PortfolioShell() {
         </div>
 
         {/* Main Phone Shell Container */}
-        <div className="relative w-full h-[100dvh] md:w-[430px] md:h-[860px] md:max-h-[calc(100vh-48px)] bg-[#0b0b0f] md:rounded-[48px] md:border-[6px] md:border-[#22222a] md:shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col z-20">
-          {/* iOS Dynamic Island Simulation (Desktop only) */}
-          <div className="hidden md:flex absolute top-3 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-40 items-center justify-between px-3 border border-white/5">
-            <div className="w-2.5 h-2.5 rounded-full bg-zinc-900 border border-zinc-800" />
-            <div className="w-2 h-2 rounded-full bg-blue-950/60" />
+        <div className="relative w-full h-[100dvh] md:w-[414px] md:h-[852px] md:max-h-[calc(100vh-48px)] bg-[#07070a] md:rounded-[50px] md:border-[4px] md:border-[#262630] phone-bezel overflow-hidden flex flex-col z-20">
+          
+          {/* Native iOS Status Bar Simulation (Desktop only) */}
+          <div className="hidden md:flex absolute top-0 left-0 right-0 h-11 items-center justify-between px-7 z-40 text-white select-none pointer-events-none">
+            <span className="text-[12px] font-semibold tracking-tight">9:41</span>
+            {/* Dynamic Island */}
+            <div className="w-24 h-6 bg-black rounded-full flex items-center justify-between px-2.5 border border-white/10 shadow-inner">
+              <div className="w-2 h-2 rounded-full bg-zinc-900 border border-zinc-700" />
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/80 animate-pulse" />
+            </div>
+            <div className="flex items-center space-x-1.5 text-zinc-300">
+              <span className="text-[10px] font-semibold">5G</span>
+              <div className="w-4 h-2.5 border border-current rounded-xs p-0.5 flex items-center">
+                <div className="w-full h-full bg-current rounded-2xs" />
+              </div>
+            </div>
           </div>
 
           {/* Internal Scrollable Content Stage */}
-          <div className="flex-1 overflow-y-auto no-scrollbar relative z-10 pt-4 md:pt-8 overscroll-contain">
+          <div className="flex-1 overflow-y-auto no-scrollbar relative z-10 pt-4 md:pt-11 pb-24 overscroll-contain">
             {renderActiveScreen()}
           </div>
 
@@ -118,6 +129,9 @@ export default function PortfolioShell() {
 
           {/* Bottom Tabs */}
           <BottomTabs activeTab={activeTab} onTabChange={handleTabChange} />
+
+          {/* iOS Home Indicator Bar */}
+          <div className="absolute bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full z-50 pointer-events-none" />
 
           {/* Full Screen Now Showing Modal Overlay */}
           <NowShowing />

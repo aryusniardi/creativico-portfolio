@@ -15,8 +15,8 @@ export function BottomTabs({ activeTab, onTabChange }: BottomTabsProps) {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-40 px-4 pb-6 pt-2 pointer-events-auto">
-      <div className="glass-panel mx-auto max-w-[400px] h-16 rounded-full flex items-center justify-around px-2 shadow-2xl border border-white/10">
+    <nav className="absolute bottom-0 left-0 right-0 z-40 px-3 pb-4 pt-2 pointer-events-auto">
+      <div className="glass-dock mx-auto w-full h-15 rounded-full flex items-center justify-around px-2 shadow-2xl border border-white/15">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -24,9 +24,9 @@ export function BottomTabs({ activeTab, onTabChange }: BottomTabsProps) {
             <button
               key={tab.id}
               onClick={() => onTabChange(tab.id)}
-              className={`flex flex-col items-center justify-center w-16 h-12 rounded-full transition-all duration-200 ${
+              className={`flex flex-col items-center justify-center w-16 h-11 rounded-full transition-all duration-200 ${
                 isActive
-                  ? 'text-[#ff597d] scale-105 font-medium'
+                  ? 'text-[#ff375f] scale-105 font-medium'
                   : 'text-zinc-400 hover:text-zinc-200 active:scale-95'
               }`}
             >

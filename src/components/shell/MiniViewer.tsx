@@ -10,10 +10,10 @@ export function MiniViewer() {
   const talentName = activeTalents.length > 0 ? activeTalents[0].name : 'Creativico Talent';
 
   return (
-    <div className="fixed bottom-24 left-0 right-0 z-30 px-4 pointer-events-auto">
+    <div className="absolute bottom-20 left-0 right-0 z-30 px-3 pointer-events-auto">
       <div 
         onClick={openNowShowing}
-        className="glass-panel mx-auto max-w-[400px] h-14 rounded-2xl flex items-center justify-between px-3 cursor-pointer shadow-lg hover:border-white/25 transition-all duration-200 group border border-white/15"
+        className="glass-dock mx-auto w-full h-14 rounded-2xl flex items-center justify-between px-3 cursor-pointer shadow-2xl hover:border-white/30 transition-all duration-200 group border border-white/15"
       >
         <div className="flex items-center space-x-3 overflow-hidden">
           <img 

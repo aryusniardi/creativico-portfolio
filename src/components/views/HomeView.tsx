@@ -41,12 +41,12 @@ export function HomeView({ onSelectRelease, onSelectTalent, onNavigateTab }: Hom
       <div className="px-5">
         <div className="text-[10px] uppercase font-bold tracking-wider text-zinc-400 mb-2.5 flex items-center justify-between">
           <span>FEATURED RELEASE</span>
-          <span className="text-[#ff597d] font-semibold text-[10px]">NEW SINGLE</span>
+          <span className="text-[#ff375f] font-semibold text-[10px]">NEW SINGLE</span>
         </div>
 
         <div 
           onClick={() => onSelectRelease(featuredRelease)}
-          className="group relative rounded-3xl overflow-hidden glass-panel border border-white/20 cursor-pointer transition-all duration-300 hover:scale-[1.01] hover:border-white/30 shadow-2xl"
+          className="group relative rounded-3xl overflow-hidden glass-panel border border-white/15 cursor-pointer transition-all duration-300 hover:border-white/30 shadow-2xl"
         >
           {/* Cover Art with Vignette */}
           <div className="relative aspect-[4/5] w-full overflow-hidden">
@@ -55,14 +55,14 @@ export function HomeView({ onSelectRelease, onSelectTalent, onNavigateTab }: Hom
               alt={featuredRelease.title}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0f] via-transparent to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#07070a] via-black/30 to-black/20" />
             
             {/* Top Badges */}
             <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-              <span className="glass-pill px-3 py-1 rounded-full text-[10px] font-semibold text-zinc-100 uppercase tracking-wider">
+              <span className="glass-pill px-3 py-1 rounded-full text-[10px] font-semibold text-zinc-100 uppercase tracking-wider border border-white/20">
                 {featuredRelease.category}
               </span>
-              <span className="glass-pill px-2.5 py-1 rounded-full text-[10px] font-mono text-zinc-300">
+              <span className="glass-pill px-2.5 py-1 rounded-full text-[10px] font-mono text-zinc-300 border border-white/20">
                 {featuredRelease.year}
               </span>
             </div>
@@ -70,7 +70,7 @@ export function HomeView({ onSelectRelease, onSelectTalent, onNavigateTab }: Hom
             {/* Bottom Details Overlay */}
             <div className="absolute bottom-4 left-4 right-4 space-y-2">
               <div className="space-y-0.5">
-                <span className="text-[10px] text-zinc-300 uppercase tracking-widest font-medium">
+                <span className="text-[10px] text-[#ff375f] uppercase tracking-widest font-semibold">
                   {featuredTalents.map(t => t?.name).join(', ')}
                 </span>
                 <h3 className="text-xl font-extrabold text-white tracking-tight leading-snug">
@@ -87,7 +87,7 @@ export function HomeView({ onSelectRelease, onSelectTalent, onNavigateTab }: Hom
                 {featuredRelease.myRoles.slice(0, 3).map((role, idx) => (
                   <span 
                     key={idx}
-                    className="px-2 py-0.5 rounded-full text-[9px] font-medium bg-black/40 text-zinc-200 border border-white/15"
+                    className="px-2 py-0.5 rounded-full text-[9px] font-medium bg-black/50 text-zinc-200 border border-white/20 backdrop-blur-md"
                   >
                     {role}
                   </span>
