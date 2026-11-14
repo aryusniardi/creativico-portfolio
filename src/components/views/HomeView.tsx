@@ -7,10 +7,9 @@ import { GlassCard } from '@zakisheriff/liquid-glass';
 interface HomeViewProps {
   onSelectRelease: (releaseId: string) => void;
   onSelectTalent: (talentId: string) => void;
-  onOpenNowShowing: () => void;
 }
 
-export function HomeView({ onSelectRelease, onSelectTalent, onOpenNowShowing }: HomeViewProps) {
+export function HomeView({ onSelectRelease, onSelectTalent }: HomeViewProps) {
   const { playWork } = usePlayer();
 
   const featuredRelease = RELEASES[0]; // Sitha Marino

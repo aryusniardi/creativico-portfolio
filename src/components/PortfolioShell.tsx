@@ -58,7 +58,6 @@ export default function PortfolioShell() {
           <HomeView
             onSelectRelease={handleSelectRelease}
             onSelectTalent={handleSelectTalent}
-            onOpenNowShowing={openNowShowing}
           />
         );
       case 'new':
@@ -76,7 +75,6 @@ export default function PortfolioShell() {
           <HomeView
             onSelectRelease={handleSelectRelease}
             onSelectTalent={handleSelectTalent}
-            onOpenNowShowing={openNowShowing}
           />
         );
     }
