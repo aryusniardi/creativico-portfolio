@@ -16,7 +16,7 @@ export function BottomTabs({ activeTab, onTabChange }: BottomTabsProps) {
 
   return (
     <nav className="absolute bottom-0 left-0 right-0 z-40 px-3 pb-4 pt-2 pointer-events-auto">
-      <div className="glass-dock mx-auto w-full h-15 rounded-full flex items-center justify-around px-2 shadow-2xl border border-white/15">
+      <div className="glass-dock mx-auto w-full h-15 rounded-full flex items-center justify-around px-2 shadow-2xl">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;

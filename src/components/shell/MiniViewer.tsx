@@ -13,7 +13,7 @@ export function MiniViewer() {
     <div className="absolute bottom-20 left-0 right-0 z-30 px-3 pointer-events-auto">
       <div 
         onClick={openNowShowing}
-        className="glass-dock mx-auto w-full h-14 rounded-2xl flex items-center justify-between px-3 cursor-pointer shadow-2xl hover:border-white/30 transition-all duration-200 group border border-white/15"
+        className="glass-dock mx-auto w-full h-14 rounded-2xl flex items-center justify-between px-3 cursor-pointer shadow-2xl transition-all duration-200 group"
       >
         <div className="flex items-center space-x-3 overflow-hidden">
           <img 

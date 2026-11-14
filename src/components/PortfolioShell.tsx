@@ -84,11 +84,13 @@ export default function PortfolioShell() {
       <div className="relative min-h-screen w-full bg-[#060609] flex items-center justify-center p-0 md:p-6 overflow-hidden">
         {/* Subtle Ambient Background Gradient derived from artwork */}
         <div 
-          className="absolute inset-0 opacity-25 filter blur-[100px] pointer-events-none scale-110"
+          className="absolute inset-0 opacity-40 filter blur-[120px] pointer-events-none scale-125 transition-all duration-700"
           style={{
-            backgroundImage: `radial-gradient(circle at 50% 40%, #ff597d 0%, #1a1024 45%, #060609 85%)`
+            backgroundImage: `radial-gradient(circle at 50% 30%, #ff375f 0%, #30122e 40%, #030305 80%)`
           }}
         />
+        {/* Subtle noise/vignette overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,transparent_0%,#030305_90%)] pointer-events-none" />
 
         {/* Desktop Helper text */}
         <div className="hidden lg:block absolute left-8 top-8 text-left space-y-1 z-10 pointer-events-none">
