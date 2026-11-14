@@ -1,37 +1,28 @@
-import React from 'react';
-import { Home, Users, FolderKanban, User } from 'lucide-react';
-import { GlassNav } from '@zakisheriff/liquid-glass';
+import { GlassNav } from "@zakisheriff/liquid-glass";
+import { House, Users, Library, UserRound } from "lucide-react";
 
-interface BottomTabsProps {
+export function BottomTabs({
+  activeTab,
+  onTabChange,
+}: {
   activeTab: string;
   onTabChange: (tab: string) => void;
-}
-
-export function BottomTabs({ activeTab, onTabChange }: BottomTabsProps) {
-  const tabDefs = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'talents', label: 'Talents', icon: Users },
-    { id: 'library', label: 'Campaigns', icon: FolderKanban },
-    { id: 'about', label: 'About', icon: User },
+}) {
+  const tabs = [
+    { id: "home", label: "Home", icon: House },
+    { id: "talents", label: "Talents", icon: Users },
+    { id: "library", label: "Campaigns", icon: Library },
+    { id: "about", label: "About", icon: UserRound },
   ];
-
-  const activeIndex = Math.max(0, tabDefs.findIndex((t) => t.id === activeTab));
-
   return (
-    <nav className="absolute bottom-0 left-0 right-0 z-40 px-3 pb-4 pt-1 pointer-events-auto">
+    <nav className="app-navigation" aria-label="Main navigation">
       <GlassNav
-        items={tabDefs.map((tab) => ({
-          label: tab.label,
-          icon: <tab.icon className="w-5 h-5" />,
-        }))}
-        activeIndex={activeIndex}
-        onChange={(index) => {
-          if (tabDefs[index]) {
-            onTabChange(tabDefs[index].id);
-          }
-        }}
-        intensity={6}
-        className="w-full justify-around py-1"
+        className="tab-bar"
+        aria-label="Portfolio sections"
+        items={tabs.map(tab => ({ label: tab.label, icon: <tab.icon size={24} strokeWidth={1.8} /> }))}
+        activeIndex={Math.max(0, tabs.findIndex(tab => tab.id === activeTab))}
+        onChange={index => onTabChange(tabs[index].id)}
+        intensity={5}
       />
     </nav>
   );

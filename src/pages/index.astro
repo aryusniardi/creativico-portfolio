@@ -1,8 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PortfolioShell from '../components/PortfolioShell';
+import Layout from "../layouts/Layout.astro";
+import PortfolioShell from "../components/PortfolioShell";
+import { loadContent } from "../data/load-content";
+const content = await loadContent();
 ---
 
-<Layout title="ON REPEAT — Creativico Creative Portfolio">
-  <PortfolioShell client:load />
+<Layout title="ON REPEAT — Creativico Creative Portfolio" description={content.profile.bioHeadline}>
+  <PortfolioShell content={content} client:load />
 </Layout>

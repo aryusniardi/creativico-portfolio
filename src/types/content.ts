@@ -2,7 +2,7 @@ export type Talent = {
   id: string;
   slug: string;
   name: string;
-  category: 'creator' | 'musician' | 'actor' | 'other';
+  category: "creator" | "musician" | "actor" | "other";
   portraitUrl: string;
   coverUrl?: string;
   bio?: string;
@@ -16,7 +16,7 @@ export type Release = {
   year: number;
   talentIds: string[];
   brand?: string;
-  category: 'campaign' | 'series' | 'brand-collab' | 'bts';
+  category: "campaign" | "series" | "brand-collab" | "bts";
   coverUrl: string;
   summary: string;
   objective?: string;
@@ -33,6 +33,9 @@ export type Release = {
 };
 
 export type Work = {
+  kind?: MediaKind;
+  imageUrl?: string;
+  alt?: string;
   id: string;
   slug: string;
   title: string;
@@ -42,9 +45,11 @@ export type Work = {
   videoUrl?: string;
   posterUrl?: string;
   durationSeconds?: number;
-  platform?: 'instagram' | 'tiktok' | 'youtube' | 'other';
+  platform?: "instagram" | "tiktok" | "youtube" | "other";
   externalUrl?: string;
   description?: string;
   myRoles: string[];
   captionsUrl?: string;
 };
+
+export type MediaKind = "image" | "video" | "external";

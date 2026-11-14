@@ -6,3 +6,11 @@ dist
 !.env.example
 *.log
 .DS_Store
+data.db
+data.db-shm
+data.db-wal
+uploads/
+.emdash/
+.astro/sessions/
+
+.emdash-seed.generated.json

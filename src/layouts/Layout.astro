@@ -1,14 +1,14 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
   title?: string;
   description?: string;
 }
 
-const { 
-  title = "ON REPEAT — Creativico Talent Portfolio", 
-  description = "Curated creative content discography for talents, creators, and entertainment brands." 
+const {
+  title = "ON REPEAT — Creativico Talent Portfolio",
+  description = "Curated creative content discography for talents, creators, and entertainment brands.",
 } = Astro.props;
 ---
 
@@ -21,9 +21,9 @@ const {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0b0b0f" />
+    <meta name="theme-color" content="#000000" />
   </head>
-  <body class="bg-[#060609] text-white">
+  <body>
     <slot />
   </body>
 </html>
