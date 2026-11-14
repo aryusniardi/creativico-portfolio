@@ -22,18 +22,21 @@ export function HomeView({ onSelectRelease, onSelectTalent, onNavigateTab }: Hom
     <div className="space-y-7 pb-36 pt-4 animate-in fade-in duration-300">
       {/* Intro Header */}
       <div className="px-5 space-y-1">
-        <div className="flex items-center space-x-2 text-[10px] tracking-widest uppercase font-semibold text-zinc-400">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#ff597d] animate-pulse" />
-          <span>CREATIVE PORTFOLIO / 2026</span>
+        <div className="flex items-center space-x-1.5 text-[10px] uppercase font-bold tracking-wider text-zinc-400">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#ff375f] animate-pulse" />
+          <span>PORTFOLIO OF CREATIVICO · 2026</span>
         </div>
         <h1 className="text-2xl font-black tracking-tight text-white leading-tight">
-          Made to be seen.<br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-400">
-            Worth replaying.
+          Victor Decha Zhevanya<br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 to-zinc-400 text-lg">
+            (Call me Vico!)
           </span>
         </h1>
-        <p className="text-xs text-zinc-400 pt-1 leading-relaxed">
-          Curated creative content discography for top talents, artists & cultural entertainment brands.
+        <p className="text-xs text-zinc-300 font-medium">
+          Creative Strategist · Creative Producer · Director
+        </p>
+        <p className="text-[11px] text-zinc-400 pt-0.5 leading-relaxed">
+          Crafting high-impact content strategies, music videos, and branded storytelling at KITE Entertainment and beyond.
         </p>
       </div>
 
