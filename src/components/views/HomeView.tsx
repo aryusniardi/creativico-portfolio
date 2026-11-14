@@ -19,10 +19,15 @@ export function HomeView({ onSelectRelease, onSelectTalent }: HomeViewProps) {
     <div className="space-y-6 pb-28 text-white">
       {/* 1. APPLE MUSIC LARGE TITLE HEADER */}
       <header className="px-5 pt-2 flex items-center justify-between">
-        <h1 className="text-3xl font-extrabold tracking-tight text-white font-sans">
-          Home
-        </h1>
-        {/* User Account Avatar with censored memoji style from screenshot */}
+        <div>
+          <span className="text-[10px] uppercase font-bold tracking-wider text-[#ff375f]">
+            CREATIVE PORTFOLIO 2026
+          </span>
+          <h1 className="text-3xl font-extrabold tracking-tight text-white font-sans mt-0.5">
+            Listen Now
+          </h1>
+        </div>
+        {/* User Account Avatar with profile link affordance */}
         <div className="relative group cursor-pointer">
           <div className="w-9 h-9 rounded-full overflow-hidden border border-white/20 shadow-md bg-zinc-800 flex items-center justify-center p-0.5">
             <img 
@@ -31,15 +36,14 @@ export function HomeView({ onSelectRelease, onSelectTalent }: HomeViewProps) {
               className="w-full h-full object-cover rounded-full"
             />
           </div>
-          <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-[#ff375f] rounded-full border-2 border-[#07070a]" />
         </div>
       </header>
 
-      {/* 2. SECTION 1: TOP PICKS FOR YOU (Large Carousel Card) */}
+      {/* 2. SECTION 1: FEATURED RELEASES (Curated Stories) */}
       <section className="space-y-3">
         <div className="px-5">
           <h2 className="text-xl font-bold tracking-tight text-white">
-            Top Picks for You
+            Featured Projects
           </h2>
         </div>
 
@@ -142,11 +146,11 @@ export function HomeView({ onSelectRelease, onSelectTalent }: HomeViewProps) {
         </div>
       </section>
 
-      {/* 3. SECTION 2: RECENTLY PLAYED (Exact Apple Music Grid) */}
+      {/* 3. SECTION 2: RECENT RELEASES */}
       <section className="space-y-3">
         <div className="px-5 flex items-center justify-between">
           <h2 className="text-xl font-bold tracking-tight text-white flex items-center space-x-1">
-            <span>Recently Played</span>
+            <span>Recent Releases</span>
             <ChevronRight className="w-5 h-5 text-zinc-400" />
           </h2>
         </div>
@@ -179,9 +183,8 @@ export function HomeView({ onSelectRelease, onSelectTalent }: HomeViewProps) {
       {/* 4. SECTION 3: ON REPEAT (Top Vertical Video Tracks) */}
       <section className="space-y-3 px-5">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold tracking-tight text-white flex items-center space-x-1.5">
-            <span>On Repeat</span>
-            <span className="w-2 h-2 rounded-full bg-[#ff375f] animate-pulse" />
+          <h2 className="text-xl font-bold tracking-tight text-white">
+            On Repeat
           </h2>
         </div>
 
@@ -205,7 +208,7 @@ export function HomeView({ onSelectRelease, onSelectTalent }: HomeViewProps) {
                 }}
               >
                 <div className="flex items-center space-x-3 min-w-0">
-                  <span className="text-xs font-mono font-bold text-zinc-500 w-4 text-center">
+                  <span className="text-sm font-semibold text-zinc-500 w-4 text-center">
                     {idx + 1}
                   </span>
                   
@@ -213,25 +216,22 @@ export function HomeView({ onSelectRelease, onSelectTalent }: HomeViewProps) {
                     <img 
                       src={work.thumbnailUrl} 
                       alt={work.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                      <Play className="w-4 h-4 text-white fill-current opacity-90 group-hover:scale-125 transition-transform" />
-                    </div>
                   </div>
 
                   <div className="min-w-0">
-                    <h4 className="text-xs font-bold text-white truncate group-hover:text-[#ff375f] transition-colors">
+                    <h4 className="text-xs font-semibold text-white truncate">
                       {work.title}
                     </h4>
-                    <p className="text-[10px] text-zinc-400 truncate">
+                    <p className="text-[11px] text-zinc-400 truncate">
                       {work.myRoles.join(' · ')}
                     </p>
                   </div>
                 </div>
 
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-zinc-300 group-hover:text-white flex-shrink-0 ml-2">
-                  <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-zinc-400 group-hover:text-white flex-shrink-0 ml-2">
+                  <Play className="w-4 h-4 fill-current ml-0.5" />
                 </div>
               </GlassCard>
             </div>
@@ -252,14 +252,14 @@ export function HomeView({ onSelectRelease, onSelectTalent }: HomeViewProps) {
               onClick={() => onSelectTalent(talent.id)}
               className="flex flex-col items-center space-y-1.5 flex-shrink-0 cursor-pointer group"
             >
-              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-[#ff375f] transition-all shadow-lg p-0.5 bg-zinc-800">
+              <div className="w-16 h-16 rounded-full overflow-hidden border border-white/10 group-hover:border-white/30 transition-all shadow-lg p-0.5 bg-zinc-800">
                 <img 
                   src={talent.portraitUrl} 
                   alt={talent.name}
                   className="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <span className="text-xs font-semibold text-zinc-200 group-hover:text-white truncate max-w-[70px] text-center">
+              <span className="text-[11px] font-medium text-zinc-300 group-hover:text-white truncate max-w-[70px] text-center">
                 {talent.name.split(' ')[0]}
               </span>
             </div>

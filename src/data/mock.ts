@@ -5,7 +5,7 @@ export const PROFILE = {
   nickname: "Vico",
   headline: "Creative Strategist | Creative Producer | Director",
   bioHeadline: "I turn talent personalities into stories people want to watch.",
-  bio: "I began in Veterinary Medicine, learning critical thinking, deep observation, and systematic research. Today, I craft high-impact content strategies, direct music videos, and lead creative productions at KITE Entertainment and beyond—connecting People, Story, and Purpose.",
+  bio: "I began in Veterinary Medicine, learning critical thinking, deep observation, and systematic research. Today, I craft high-impact content strategies, direct music videos, and lead creative productions at KITE Entertainment and beyond: connecting People, Story, and Purpose.",
   location: "Jakarta, Indonesia",
   email: "victordechaz@gmail.com",
   phone: "+62 812-3351-6479",
@@ -86,7 +86,7 @@ export const RELEASES: Release[] = [
   {
     id: 'rel-hitam-mv',
     slug: 'hitam-makatita-mv',
-    title: 'HITAM — Official Music Video',
+    title: 'HITAM : Official Music Video',
     year: 2026,
     talentIds: ['makatita'],
     brand: 'Makatita / Independent',
@@ -95,7 +95,7 @@ export const RELEASES: Release[] = [
     summary: 'Directing the official hip-hop music video HITAM under 1-month compressed timeline, 1-day shoot in Blok M & studio.',
     objective: 'Translate an emotionally complex hip-hop record into a cinematic visual journey without falling into literal cliches of darkness.',
     insight: 'The song is titled HITAM (Black), but the emotional weight was about vulnerability, silence, and guilt hidden beneath the surface.',
-    concept: 'White Supper — an inverted surreal visual metaphor of silence and vulnerability juxtaposed against urban Jakarta night streets.',
+    concept: 'White Supper : an inverted surreal visual metaphor of silence and vulnerability juxtaposed against urban Jakarta night streets.',
     execution: 'Split shoot: 1 AM - 4 AM night exterior at Blok M, followed by 9 AM - 9 PM intensive White Supper studio set.',
     outcome: 'Visual feast that elevated the hip-hop single with cinematic praise and solid digital engagement.',
     myRoles: ['Director', 'Creative Direction', 'Visual Treatment', 'Storyboarding', 'On-set Direction'],
@@ -146,7 +146,7 @@ export const RELEASES: Release[] = [
   {
     id: 'rel-sitha-branded',
     slug: 'sitha-marino-branded-storytelling',
-    title: 'Sitha Marino — Branded Storytelling Engine',
+    title: 'Sitha Marino : Branded Storytelling Engine',
     year: 2025,
     talentIds: ['sitha-marino'],
     brand: 'Various Tier-1 FMCG & Lifestyle Brands',
@@ -179,7 +179,7 @@ export const WORKS: Work[] = [
   {
     id: 'work-hitam-01',
     slug: 'hitam-white-supper-scene',
-    title: 'HITAM — The White Supper Scene',
+    title: 'HITAM : The White Supper Scene',
     releaseId: 'rel-hitam-mv',
     talentIds: ['makatita'],
     thumbnailUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80',
@@ -194,7 +194,7 @@ export const WORKS: Work[] = [
   {
     id: 'work-hitam-02',
     slug: 'hitam-blok-m-night-run',
-    title: 'HITAM — Blok M 3 AM Exterior',
+    title: 'HITAM : Blok M 3 AM Exterior',
     releaseId: 'rel-hitam-mv',
     talentIds: ['makatita'],
     thumbnailUrl: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80',
@@ -224,7 +224,7 @@ export const WORKS: Work[] = [
   {
     id: 'work-harry-halim',
     slug: 'harry-halim-the-reinvention',
-    title: 'Harry Halim — The Reinvention',
+    title: 'Harry Halim : The Reinvention',
     releaseId: 'rel-talent-reveal',
     talentIds: ['harry-halim'],
     thumbnailUrl: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80',
@@ -239,7 +239,7 @@ export const WORKS: Work[] = [
   {
     id: 'work-fergie-midsommar',
     slug: 'fergie-brittany-becoming-herself',
-    title: 'Fergie Brittany — Becoming Herself',
+    title: 'Fergie Brittany : Becoming Herself',
     releaseId: 'rel-talent-reveal',
     talentIds: ['fergie-brittany'],
     thumbnailUrl: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80',
@@ -254,7 +254,7 @@ export const WORKS: Work[] = [
   {
     id: 'work-lutesha-unexpected',
     slug: 'lutesha-the-unexpected',
-    title: 'Lutesha — The Unexpected',
+    title: 'Lutesha : The Unexpected',
     releaseId: 'rel-talent-reveal',
     talentIds: ['lutesha'],
     thumbnailUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
@@ -269,7 +269,7 @@ export const WORKS: Work[] = [
   {
     id: 'work-sitha-01',
     slug: 'sitha-marino-authenticity-first',
-    title: 'Sitha Marino — Creator-Native Branded Integration',
+    title: 'Sitha Marino : Creator-Native Branded Integration',
     releaseId: 'rel-sitha-branded',
     talentIds: ['sitha-marino'],
     thumbnailUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80',
@@ -284,7 +284,7 @@ export const WORKS: Work[] = [
   {
     id: 'work-sitha-02',
     slug: 'sitha-marino-daily-hook',
-    title: 'Sitha Marino — High-Retention Content Hook',
+    title: 'Sitha Marino : High-Retention Content Hook',
     releaseId: 'rel-sitha-branded',
     talentIds: ['sitha-marino'],
     thumbnailUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80',

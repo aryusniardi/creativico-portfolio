@@ -60,16 +60,17 @@ export default function PortfolioShell() {
             onSelectTalent={handleSelectTalent}
           />
         );
-      case 'new':
       case 'talents':
         return <TalentsView onSelectTalent={handleSelectTalent} />;
-      case 'radio':
+      case 'library':
+        return (
+          <LibraryView
+            onSelectRelease={handleSelectRelease}
+            onSelectTalent={handleSelectTalent}
+          />
+        );
       case 'about':
         return <AboutView />;
-      case 'library':
-        return <LibraryView onSelectRelease={handleSelectRelease} />;
-      case 'search':
-        return <LibraryView onSelectRelease={handleSelectRelease} />;
       default:
         return (
           <HomeView
