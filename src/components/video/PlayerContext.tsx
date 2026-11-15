@@ -9,7 +9,7 @@ function usePlayerState() {
   const [currentWork, setCurrentWork] = useState<Work | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isNowShowingOpen, setIsNowShowingOpen] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const activeRelease = RELEASES.find((release) => release.id === currentWork?.releaseId) || null;
   const activeTalents = TALENTS.filter((talent) => currentWork?.talentIds.includes(talent.id));
   const queue = activeRelease ? projectMedia(activeRelease, WORKS) : [];

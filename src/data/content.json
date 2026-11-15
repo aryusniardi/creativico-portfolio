@@ -2,14 +2,14 @@
   "profile": {
     "name": "Victor Decha Zhevanya",
     "nickname": "Vico",
-    "headline": "Creative Strategist | Creative Producer | Director",
+    "headline": "Creative & Content Strategist | Talent & Brand Campaign Specialist | AI & Data-Driven Strategy",
     "bioHeadline": "Human-First Creativity",
-    "bio": "I began in Veterinary Medicine, where I learned to think critically, solve problems through research, and observe with intention. Today, I craft content strategies, lead creative productions, direct music videos, and build brand experiences by connecting People, Story, and Purpose. Every creative decision serves a purpose: making people feel something.",
+    "bio": "I began in Veterinary Medicine, where studying science taught me to think critically, solve complex problems, and make decisions based on evidence. Today, I connect people, story, and purpose as a Creative Strategist—directing music videos, architecting viral talent campaigns, and engineering community-first brand experiences.",
     "location": "Jakarta, Indonesia · Open to relocation and global opportunities",
     "email": "victordechaz@gmail.com",
     "phone": "+62 812-3351-6479",
     "linkedin": "https://www.linkedin.com/in/victordechaz",
-    "portraitUrl": "/media/portfolio/vico.webp",
+    "portraitUrl": "/media/uploads/01M7DMB5N2N5D080VW5QAQQCJ0.webp",
     "tags": [
       "ENFP",
       "CAPRICORN",
@@ -36,6 +36,31 @@
         "title": "English Proficiency — CEFR C1 (Advanced)",
         "issuer": "British Council EnglishScore",
         "desc": "Professional communication and collaboration in an international environment."
+      },
+      {
+        "title": "Outstanding Graduate",
+        "issuer": "Faculty of Veterinary Medicine · Universitas Wijaya Kusuma Surabaya",
+        "desc": "Graduated with top academic and scientific honors."
+      },
+      {
+        "title": "1st Place – National Scientific Writing Competition",
+        "issuer": "National Scientific Forum",
+        "desc": "Awarded first place for evidence-based research and scientific presentation."
+      },
+      {
+        "title": "1st Place – National Veterinary Scientific Writing Competition",
+        "issuer": "Veterinary Scientific Conference",
+        "desc": "First place for clinical and veterinary research."
+      },
+      {
+        "title": "2nd Place & Best Presenter – National Scientific Writing Competition",
+        "issuer": "National Research Symposium",
+        "desc": "Recognized for outstanding paper defense and scientific presentation."
+      },
+      {
+        "title": "1st Place – National Business Plan Competition",
+        "issuer": "National Entrepreneurship Challenge",
+        "desc": "Awarded first place for sustainable business model and strategic execution."
       }
     ],
     "disciplines": [
@@ -80,157 +105,210 @@
   },
   "talents": [
     {
-      "id": "sitha-marino",
-      "slug": "sitha-marino",
-      "name": "Sitha Marino",
+      "name": "Bebeto",
       "category": "creator",
-      "portraitUrl": "/media/portfolio/sitha-marino.webp",
-      "coverUrl": "/media/portfolio/sitha-marino.webp",
-      "bio": "Creative strategy and production for TikTok and Instagram branded content. The portfolio records an audience of 2.5M on TikTok and 888k on Instagram.",
+      "portraitUrl": "/media/uploads/01M7FF32CRG3K67Y6505ES3FA9.webp",
+      "coverUrl": "/media/uploads/01M7FF32CRG3K67Y6505ES3FA9.webp",
+      "bio": "Football creator at KITE Entertainment engaging over 7.5M unique viewers on TikTok through community-first football commentary and culture.",
+      "id": "bebeto",
+      "slug": "bebeto",
       "projectIds": [
-        "rel-sitha-branded"
+        "rel-bebeto-football"
       ]
     },
     {
-      "id": "makatita",
-      "slug": "makatita",
+      "name": "Max Huang",
+      "category": "actor",
+      "portraitUrl": "/media/uploads/01M7DMB5PGHEJV6SFYPDY1ZATJ.webp",
+      "coverUrl": "/media/uploads/01M7DMB5PGHEJV6SFYPDY1ZATJ.webp",
+      "bio": "The New Chapter evolved into Max Huang: Life of Action, a mini docu-drama with six months of development and a three-day production.",
+      "id": "max-huang",
+      "slug": "max-huang",
+      "projectIds": [
+        "rel-talent-reveal"
+      ]
+    },
+    {
+      "name": "Harry Halim",
+      "category": "other",
+      "portraitUrl": "/media/uploads/01M7DMB5P9ZT9V3Z36BGBN3KXG.webp",
+      "coverUrl": "/media/uploads/01M7DMB5P9ZT9V3Z36BGBN3KXG.webp",
+      "bio": "The Reinvention — introducing the fashion designer’s new chapter as an actor. The reveal was presented at his media press conference and show.",
+      "id": "harry-halim",
+      "slug": "harry-halim",
+      "projectIds": [
+        "rel-talent-reveal"
+      ]
+    },
+    {
+      "name": "Abby Latip",
+      "category": "other",
+      "portraitUrl": "/media/uploads/01M7DMB5P3N3XE3EHMWH7P5T8M.webp",
+      "coverUrl": "/media/uploads/01M7DMB5P3N3XE3EHMWH7P5T8M.webp",
+      "bio": "The Energy — one of six individually developed KITE Entertainment talent reveals.",
+      "id": "abby-latip",
+      "slug": "abby-latip",
+      "projectIds": [
+        "rel-talent-reveal"
+      ]
+    },
+    {
+      "name": "Theo Supple",
+      "category": "other",
+      "portraitUrl": "/media/uploads/01M7DMB5NZ9MP9WEZPKSGRH5R1.webp",
+      "coverUrl": "/media/uploads/01M7DMB5NZ9MP9WEZPKSGRH5R1.webp",
+      "bio": "The Character — one of six individually developed KITE Entertainment talent reveals.",
+      "id": "theo-supple",
+      "slug": "theo-supple",
+      "projectIds": [
+        "rel-talent-reveal"
+      ]
+    },
+    {
+      "name": "Fergie Brittany",
+      "category": "creator",
+      "portraitUrl": "/media/uploads/01M7DMB5NVPC6MACVRHGKMZEC9.webp",
+      "coverUrl": "/media/uploads/01M7DMB5NVPC6MACVRHGKMZEC9.webp",
+      "bio": "Becoming Herself — an open-field narrative inspired by Midsommar, exploring transformation and self-acceptance.",
+      "id": "fergie-brittany",
+      "slug": "fergie-brittany",
+      "projectIds": [
+        "rel-talent-reveal"
+      ]
+    },
+    {
+      "name": "Lutesha",
+      "category": "actor",
+      "portraitUrl": "/media/uploads/01M7DMB5NR1PEN8M4Y25MM2BZK.webp",
+      "coverUrl": "/media/uploads/01M7DMB5NR1PEN8M4Y25MM2BZK.webp",
+      "bio": "The Unexpected — the first project in KITE Entertainment’s Talent Reveal journey.",
+      "id": "lutesha",
+      "slug": "lutesha",
+      "projectIds": [
+        "rel-talent-reveal"
+      ]
+    },
+    {
       "name": "Makatita",
       "category": "musician",
-      "portraitUrl": "/media/portfolio/makatita.webp",
-      "coverUrl": "/media/portfolio/makatita.webp",
+      "portraitUrl": "/media/uploads/01M7DMB5NN8ERRDTQM7XHZSTFN.webp",
+      "coverUrl": "/media/uploads/01M7DMB5NN8ERRDTQM7XHZSTFN.webp",
       "bio": "Hip-hop artist behind HITAM. Vico directed the official music video through the White Supper concept and a shoot in Blok M and the studio.",
+      "id": "makatita",
+      "slug": "makatita",
       "projectIds": [
         "rel-hitam-mv"
       ]
     },
     {
-      "id": "lutesha",
-      "slug": "lutesha",
-      "name": "Lutesha",
-      "category": "actor",
-      "portraitUrl": "/media/portfolio/lutesha.webp",
-      "coverUrl": "/media/portfolio/lutesha.webp",
-      "bio": "The Unexpected — the first project in KITE Entertainment’s Talent Reveal journey.",
-      "projectIds": [
-        "rel-talent-reveal"
-      ]
-    },
-    {
-      "id": "fergie-brittany",
-      "slug": "fergie-brittany",
-      "name": "Fergie Brittany",
+      "name": "Sitha Marino",
       "category": "creator",
-      "portraitUrl": "/media/portfolio/fergie-brittany.webp",
-      "coverUrl": "/media/portfolio/fergie-brittany.webp",
-      "bio": "Becoming Herself — an open-field narrative inspired by Midsommar, exploring transformation and self-acceptance.",
+      "portraitUrl": "/media/uploads/01M7DMB5NG91ND3QJV3BTW1VDF.webp",
+      "coverUrl": "/media/uploads/01M7DMB5NG91ND3QJV3BTW1VDF.webp",
+      "bio": "Creative strategy and production for TikTok and Instagram branded content. The portfolio records an audience of 2.5M on TikTok and 888k on Instagram.",
+      "id": "sitha-marino",
+      "slug": "sitha-marino",
       "projectIds": [
-        "rel-talent-reveal"
-      ]
-    },
-    {
-      "id": "theo-supple",
-      "slug": "theo-supple",
-      "name": "Theo Supple",
-      "category": "other",
-      "portraitUrl": "/media/portfolio/theo-supple.webp",
-      "coverUrl": "/media/portfolio/theo-supple.webp",
-      "bio": "The Character — one of six individually developed KITE Entertainment talent reveals.",
-      "projectIds": [
-        "rel-talent-reveal"
-      ]
-    },
-    {
-      "id": "abby-latip",
-      "slug": "abby-latip",
-      "name": "Abby Latip",
-      "category": "other",
-      "portraitUrl": "/media/portfolio/abby-latip.webp",
-      "coverUrl": "/media/portfolio/abby-latip.webp",
-      "bio": "The Energy — one of six individually developed KITE Entertainment talent reveals.",
-      "projectIds": [
-        "rel-talent-reveal"
-      ]
-    },
-    {
-      "id": "harry-halim",
-      "slug": "harry-halim",
-      "name": "Harry Halim",
-      "category": "other",
-      "portraitUrl": "/media/portfolio/harry-halim.webp",
-      "coverUrl": "/media/portfolio/harry-halim.webp",
-      "bio": "The Reinvention — introducing the fashion designer’s new chapter as an actor. The reveal was presented at his media press conference and show.",
-      "projectIds": [
-        "rel-talent-reveal"
-      ]
-    },
-    {
-      "id": "max-huang",
-      "slug": "max-huang",
-      "name": "Max Huang",
-      "category": "actor",
-      "portraitUrl": "/media/portfolio/max-huang.webp",
-      "coverUrl": "/media/portfolio/max-huang.webp",
-      "bio": "The New Chapter evolved into Max Huang: Life of Action, a mini docu-drama with six months of development and a three-day production.",
-      "projectIds": [
-        "rel-talent-reveal"
+        "rel-sitha-branded"
       ]
     }
   ],
   "releases": [
     {
-      "title": "HITAM : Official Music Video",
+      "title": "Bebeto : Community-First Football Engine",
       "year": 2026,
-      "brand": "Makatita / Independent",
+      "brand": "KITE Entertainment / Bebeto",
       "category": "campaign",
-      "coverUrl": "/media/portfolio/makatita.webp",
-      "summary": "Directing Makatita’s official music video through a White Supper concept, with one production day across Blok M and the studio.",
-      "objective": "Create a visually distinctive music video within a compressed timeline while translating an emotionally complex song into a cinematic experience.",
-      "insight": "HITAM means black, but the emotional journey was about what lay beneath it: silence, guilt, vulnerability, and emotional conflict.",
-      "concept": "White Supper uses contrast, symbolism, and emotion instead of portraying darkness literally.",
-      "execution": "June 1 creative brief; June 26 production, from 1–4 AM in Blok M and 9 AM–9 PM in the studio; July 8 release.",
-      "outcome": "Vico’s first official music video. The project reinforced preparation, adaptability, creative leadership, and trust across the team.",
+      "coverUrl": "/media/uploads/01M7FF32CRG3K67Y6505ES3FA9.webp",
+      "summary": "Positioning Bebeto into TikTok’s football culture, generating 13.6M views in 28 days through community-driven commentary and active two-way engagement.",
+      "objective": "Transform Bebeto from an emerging talent into a high-engagement digital football authority that brands can integrate into authentically.",
+      "insight": "Football fans don’t just watch videos—they seek active community debate. Traditional sponsorship feels intrusive, but community-embedded conversations drive real affinity.",
+      "concept": "Make the comment section the core product. Deliver rapid-reaction commentary on trending football moments, sparking debates and turning fans into active co-creators.",
+      "execution": "Developed content pillars centered on football culture and daily trends; established an active comment-response mechanism and high-tempo vertical video production.",
+      "outcome": "13.6M views, 7.5M unique viewers, +14.2K followers, 26K+ shares, and 11K+ comments in 28 days, establishing a blueprint for brand-community integration.",
       "myRoles": [
-        "Director",
-        "Creative Direction",
-        "Concept Development",
-        "Visual Treatment",
-        "Storyboarding",
-        "Production Planning",
-        "On-set Direction"
+        "Creative Strategist",
+        "Content Strategist",
+        "Audience Growth",
+        "Creative Direction"
       ],
       "metrics": [
         {
-          "label": "Timeline",
-          "value": "June–July 2026",
-          "context": "Creative brief to release"
+          "label": "Views",
+          "value": "13.6M",
+          "context": "First 28 days on TikTok"
         },
         {
-          "label": "Production",
-          "value": "1 day",
-          "context": "Blok M, Jakarta + studio"
+          "label": "Reach",
+          "value": "7.5M",
+          "context": "Unique viewers"
+        },
+        {
+          "label": "Followers",
+          "value": "+14.2K",
+          "context": "Organic 28-day growth"
+        },
+        {
+          "label": "Engagement",
+          "value": "26K+ shares / 11K+ comments",
+          "context": "Community interaction"
         }
       ],
       "featured": true,
-      "publishedAt": "2026-07-08T00:00:00.000Z",
+      "publishedAt": "2026-08-15T00:00:00.000Z",
       "talentIds": [
-        "makatita"
+        "bebeto"
       ],
       "workIds": [
-        "work-hitam-original",
-        "work-hitam-white-supper",
-        "work-hitam-blok-m",
-        "work-hitam-production",
-        "work-hitam-crew"
+        "work-bebeto-football-growth"
       ],
-      "id": "rel-hitam-mv",
-      "slug": "hitam-makatita-mv"
+      "id": "rel-bebeto-football",
+      "slug": "rel-bebeto-football"
+    },
+    {
+      "title": "Sitha Marino : Branded Storytelling Engine",
+      "year": 2025,
+      "brand": "KITE Entertainment",
+      "category": "brand-collab",
+      "coverUrl": "/media/uploads/01M7DMB5NG91ND3QJV3BTW1VDF.webp",
+      "summary": "End-to-end creative strategy and production for Sitha Marino’s TikTok and Instagram brand collaborations.",
+      "objective": "Bridge business objectives, creator authenticity, and production execution into one shared creative process.",
+      "insight": "Authenticity starts with understanding the creator: communication style, content formats, editing rhythm, humor, and audience expectations.",
+      "concept": "Adapt each campaign to Sitha’s voice instead of adapting the creator to fit a corporate brief.",
+      "execution": "Brief analysis, concepts, storyline, scheduling, talent coordination, on-set direction, brand compliance, post-production, approvals, publishing, and performance review.",
+      "outcome": "Approval cycles accelerated after the first few months. Audience response, brand feedback, and talent feedback informed subsequent campaigns.",
+      "myRoles": [
+        "Creative Strategist",
+        "Creative Producer"
+      ],
+      "metrics": [
+        {
+          "label": "TikTok audience",
+          "value": "2.5M",
+          "context": "As recorded in the 2026 portfolio"
+        },
+        {
+          "label": "Instagram audience",
+          "value": "888k",
+          "context": "As recorded in the 2026 portfolio"
+        }
+      ],
+      "featured": false,
+      "talentIds": [
+        "sitha-marino"
+      ],
+      "workIds": [
+        "work-sitha-portrait"
+      ],
+      "id": "rel-sitha-branded",
+      "slug": "rel-sitha-branded"
     },
     {
       "title": "KITE Talent Reveal Project",
       "year": 2025,
       "brand": "KITE Entertainment",
       "category": "series",
-      "coverUrl": "/media/portfolio/max-action.webp",
+      "coverUrl": "/media/uploads/01M7DMB5RR5JWEHRWSVQTAC6BE.webp",
       "summary": "Six distinct stories introducing KITE Entertainment talents, developed over 1.5 years with production scales ranging from small crews to a mini docu-drama.",
       "objective": "Introduce who each new talent is, and why audiences should care, through stories that feel uniquely theirs.",
       "insight": "Different personalities, backgrounds, and ambitions need different ways of being seen.",
@@ -282,150 +360,285 @@
         "work-max-still"
       ],
       "id": "rel-talent-reveal",
-      "slug": "kite-talent-reveal-project"
+      "slug": "rel-talent-reveal"
     },
     {
-      "title": "Sitha Marino : Branded Storytelling Engine",
-      "year": 2025,
-      "brand": "KITE Entertainment",
-      "category": "brand-collab",
-      "coverUrl": "/media/portfolio/sitha-marino.webp",
-      "summary": "End-to-end creative strategy and production for Sitha Marino’s TikTok and Instagram brand collaborations.",
-      "objective": "Bridge business objectives, creator authenticity, and production execution into one shared creative process.",
-      "insight": "Authenticity starts with understanding the creator: communication style, content formats, editing rhythm, humor, and audience expectations.",
-      "concept": "Adapt each campaign to Sitha’s voice instead of adapting the creator to fit a corporate brief.",
-      "execution": "Brief analysis, concepts, storyline, scheduling, talent coordination, on-set direction, brand compliance, post-production, approvals, publishing, and performance review.",
-      "outcome": "Approval cycles accelerated after the first few months. Audience response, brand feedback, and talent feedback informed subsequent campaigns.",
+      "title": "HITAM : Official Music Video",
+      "year": 2026,
+      "brand": "Makatita / Independent",
+      "category": "campaign",
+      "coverUrl": "/media/uploads/01M7DMB5NN8ERRDTQM7XHZSTFN.webp",
+      "summary": "Directing Makatita’s official music video through a White Supper concept, with one production day across Blok M and the studio.",
+      "objective": "Create a visually distinctive music video within a compressed timeline while translating an emotionally complex song into a cinematic experience.",
+      "insight": "HITAM means black, but the emotional journey was about what lay beneath it: silence, guilt, vulnerability, and emotional conflict.",
+      "concept": "White Supper uses contrast, symbolism, and emotion instead of portraying darkness literally.",
+      "execution": "June 1 creative brief; June 26 production, from 1–4 AM in Blok M and 9 AM–9 PM in the studio; July 8 release.",
+      "outcome": "Vico’s first official music video. The project reinforced preparation, adaptability, creative leadership, and trust across the team.",
       "myRoles": [
-        "Creative Strategist",
-        "Creative Producer"
+        "Director",
+        "Creative Direction",
+        "Concept Development",
+        "Visual Treatment",
+        "Storyboarding",
+        "Production Planning",
+        "On-set Direction"
       ],
       "metrics": [
         {
-          "label": "TikTok audience",
-          "value": "2.5M",
-          "context": "As recorded in the 2026 portfolio"
+          "label": "Timeline",
+          "value": "June–July 2026",
+          "context": "Creative brief to release"
         },
         {
-          "label": "Instagram audience",
-          "value": "888k",
-          "context": "As recorded in the 2026 portfolio"
+          "label": "Production",
+          "value": "1 day",
+          "context": "Blok M, Jakarta + studio"
         }
       ],
-      "featured": false,
+      "featured": true,
+      "publishedAt": "2026-07-08T00:00:00.000Z",
       "talentIds": [
-        "sitha-marino"
+        "makatita"
       ],
       "workIds": [
-        "work-sitha-portrait"
+        "work-hitam-original",
+        "work-hitam-white-supper",
+        "work-hitam-blok-m",
+        "work-hitam-production",
+        "work-hitam-crew"
       ],
-      "id": "rel-sitha-branded",
-      "slug": "sitha-marino-branded-storytelling"
+      "id": "rel-hitam-mv",
+      "slug": "rel-hitam-mv"
     }
   ],
   "works": [
     {
-      "id": "work-hitam-original",
-      "slug": "work-hitam-original",
-      "title": "HITAM — Official Music Video",
-      "releaseId": "rel-hitam-mv",
-      "talentIds": [
-        "makatita"
-      ],
+      "title": "Bebeto — 13.6M Views in 28 Days Case Study",
       "kind": "external",
-      "thumbnailUrl": "/media/portfolio/makatita.webp",
-      "description": "The official release linked from page 17 of the portfolio.",
+      "thumbnailUrl": "/media/uploads/01M7FF32CRG3K67Y6505ES3FA9.webp",
+      "externalUrl": "https://www.linkedin.com/posts/victordechaz_136m-views-in-28-days-so-where-are-the-ugcPost-7487922612468289536-VgPu/",
+      "platform": "tiktok",
+      "description": "TikTok football community growth case study: 13.6M views, 7.5M unique viewers, and +14.2K followers in 28 days through community-first creative strategy.",
       "myRoles": [
-        "Director",
-        "Creative Direction",
-        "Concept Development",
-        "Visual Treatment",
-        "Storyboarding",
-        "Production Planning",
-        "On-set Direction"
+        "Creative Strategist",
+        "Content Strategist",
+        "Audience Growth"
       ],
-      "externalUrl": "https://youtu.be/0ERR5BCTcYo",
-      "platform": "youtube"
-    },
-    {
-      "id": "work-hitam-white-supper",
-      "slug": "work-hitam-white-supper",
-      "title": "White Supper",
-      "releaseId": "rel-hitam-mv",
       "talentIds": [
-        "makatita"
+        "bebeto"
       ],
-      "kind": "image",
-      "thumbnailUrl": "/media/portfolio/white-supper.webp",
-      "description": "A White Supper scene from the HITAM music video, reproduced from portfolio page 20.",
-      "myRoles": [
-        "Director",
-        "Creative Direction",
-        "Concept Development",
-        "Visual Treatment",
-        "Storyboarding",
-        "Production Planning",
-        "On-set Direction"
-      ],
-      "imageUrl": "/media/portfolio/white-supper.webp",
-      "alt": "A White Supper scene from the HITAM music video, reproduced from portfolio page 20."
+      "id": "work-bebeto-football-growth",
+      "slug": "work-bebeto-football-growth",
+      "releaseId": "rel-bebeto-football"
     },
     {
-      "id": "work-hitam-blok-m",
-      "slug": "work-hitam-blok-m",
-      "title": "Blok M Night Shoot",
-      "releaseId": "rel-hitam-mv",
+      "title": "Sitha Marino — Portfolio Portrait",
+      "kind": "image",
+      "thumbnailUrl": "/media/uploads/01M7DMB5NG91ND3QJV3BTW1VDF.webp",
+      "imageUrl": "/media/uploads/01M7DMB5NG91ND3QJV3BTW1VDF.webp",
+      "alt": "Sitha Marino’s portrait reproduced from page 9 of the 2026 portfolio. The PDF links her social profiles rather than an individual campaign video.",
+      "description": "Sitha Marino’s portrait reproduced from page 9 of the 2026 portfolio. The PDF links her social profiles rather than an individual campaign video.",
+      "myRoles": [
+        "Creative Strategist",
+        "Creative Producer"
+      ],
       "talentIds": [
-        "makatita"
+        "sitha-marino"
       ],
-      "kind": "image",
-      "thumbnailUrl": "/media/portfolio/blok-m.webp",
-      "description": "The Blok M location from the HITAM production, reproduced from portfolio page 19.",
-      "myRoles": [
-        "Director",
-        "Creative Direction",
-        "Concept Development",
-        "Visual Treatment",
-        "Storyboarding",
-        "Production Planning",
-        "On-set Direction"
-      ],
-      "imageUrl": "/media/portfolio/blok-m.webp",
-      "alt": "The Blok M location from the HITAM production, reproduced from portfolio page 19."
+      "id": "work-sitha-portrait",
+      "slug": "work-sitha-portrait",
+      "releaseId": "rel-sitha-branded"
     },
     {
-      "id": "work-hitam-production",
-      "slug": "work-hitam-production",
-      "title": "On Set",
-      "releaseId": "rel-hitam-mv",
+      "title": "Max Huang — Portfolio Still",
+      "kind": "image",
+      "thumbnailUrl": "/media/uploads/01M7DMB5RR5JWEHRWSVQTAC6BE.webp",
+      "imageUrl": "/media/uploads/01M7DMB5RR5JWEHRWSVQTAC6BE.webp",
+      "alt": "Max Huang’s Life of Action imagery from portfolio page 34.",
+      "description": "Max Huang’s Life of Action imagery from portfolio page 34.",
+      "myRoles": [
+        "Creative / Director",
+        "Creative Director",
+        "Creative Lead",
+        "1st Assistant Director"
+      ],
       "talentIds": [
-        "makatita"
+        "max-huang"
       ],
-      "kind": "image",
-      "thumbnailUrl": "/media/portfolio/hitam-production.webp",
-      "description": "A studio production image from portfolio page 21.",
-      "myRoles": [
-        "Director",
-        "Creative Direction",
-        "Concept Development",
-        "Visual Treatment",
-        "Storyboarding",
-        "Production Planning",
-        "On-set Direction"
-      ],
-      "imageUrl": "/media/portfolio/hitam-production.webp",
-      "alt": "A studio production image from portfolio page 21."
+      "id": "work-max-still",
+      "slug": "work-max-still",
+      "releaseId": "rel-talent-reveal"
     },
     {
-      "id": "work-hitam-crew",
-      "slug": "work-hitam-crew",
+      "title": "Harry Halim — Portfolio Still",
+      "kind": "image",
+      "thumbnailUrl": "/media/uploads/01M7DMB5RN70S7FP8CKE4B0QHB.webp",
+      "imageUrl": "/media/uploads/01M7DMB5RN70S7FP8CKE4B0QHB.webp",
+      "alt": "Harry Halim’s reveal imagery from portfolio page 33.",
+      "description": "Harry Halim’s reveal imagery from portfolio page 33.",
+      "myRoles": [
+        "Creative / Director",
+        "Creative Director",
+        "Creative Lead",
+        "1st Assistant Director"
+      ],
+      "talentIds": [
+        "harry-halim"
+      ],
+      "id": "work-harry-still",
+      "slug": "work-harry-still",
+      "releaseId": "rel-talent-reveal"
+    },
+    {
+      "title": "Fergie Brittany — Portfolio Still",
+      "kind": "image",
+      "thumbnailUrl": "/media/uploads/01M7DMB5RG8E4Y0JHK47J05NB2.webp",
+      "imageUrl": "/media/uploads/01M7DMB5RG8E4Y0JHK47J05NB2.webp",
+      "alt": "Fergie Brittany’s reveal imagery from portfolio page 32.",
+      "description": "Fergie Brittany’s reveal imagery from portfolio page 32.",
+      "myRoles": [
+        "Creative / Director",
+        "Creative Director",
+        "Creative Lead",
+        "1st Assistant Director"
+      ],
+      "talentIds": [
+        "fergie-brittany"
+      ],
+      "id": "work-fergie-still",
+      "slug": "work-fergie-still",
+      "releaseId": "rel-talent-reveal"
+    },
+    {
+      "title": "Max Huang — The New Chapter / Life of Action",
+      "kind": "external",
+      "thumbnailUrl": "/media/uploads/01M7DMB5PGHEJV6SFYPDY1ZATJ.webp",
+      "externalUrl": "https://youtube.com/playlist?list=PLo9-y-trgpVh_VWsljH3BtUbE8r8m3aa6",
+      "platform": "youtube",
+      "description": "Max Huang’s original reveal linked from page 26 of the portfolio.",
+      "myRoles": [
+        "Creative / Director",
+        "Creative Director",
+        "Creative Lead",
+        "1st Assistant Director"
+      ],
+      "talentIds": [
+        "max-huang"
+      ],
+      "id": "work-max-original",
+      "slug": "work-max-original",
+      "releaseId": "rel-talent-reveal"
+    },
+    {
+      "title": "Harry Halim — The Reinvention",
+      "kind": "video",
+      "thumbnailUrl": "/media/uploads/01M7DMB5P9ZT9V3Z36BGBN3KXG.webp",
+      "videoUrl": "/media/uploads/01M7FGC7C8WAYQ4G7XGXHDDWCJ.mp4",
+      "externalUrl": "https://www.instagram.com/reel/DW8hebsAcUB/",
+      "platform": "instagram",
+      "description": "Harry Halim’s original reveal linked from page 26 of the portfolio.",
+      "myRoles": [
+        "Creative / Director",
+        "Creative Director",
+        "Creative Lead",
+        "1st Assistant Director"
+      ],
+      "talentIds": [
+        "harry-halim"
+      ],
+      "id": "work-harry-original",
+      "slug": "work-harry-original",
+      "releaseId": "rel-talent-reveal"
+    },
+    {
+      "title": "Abby Latip — The Energy",
+      "kind": "video",
+      "thumbnailUrl": "/media/uploads/01M7DMB5P3N3XE3EHMWH7P5T8M.webp",
+      "videoUrl": "/media/uploads/01M7FGC7D7J4HFA2B6WQ549M0S.mp4",
+      "externalUrl": "https://www.instagram.com/reel/DR1s6lekvyd/",
+      "platform": "instagram",
+      "description": "Abby Latip’s original reveal linked from page 26 of the portfolio.",
+      "myRoles": [
+        "Creative / Director",
+        "Creative Director",
+        "Creative Lead",
+        "1st Assistant Director"
+      ],
+      "talentIds": [
+        "abby-latip"
+      ],
+      "id": "work-abby-original",
+      "slug": "work-abby-original",
+      "releaseId": "rel-talent-reveal"
+    },
+    {
+      "title": "Theo Supple — The Character",
+      "kind": "external",
+      "thumbnailUrl": "/media/uploads/01M7DMB5NZ9MP9WEZPKSGRH5R1.webp",
+      "externalUrl": "https://www.instagram.com/reel/DRj3L--EhOo/",
+      "platform": "instagram",
+      "description": "Theo Supple’s original reveal linked from page 26 of the portfolio.",
+      "myRoles": [
+        "Creative / Director",
+        "Creative Director",
+        "Creative Lead",
+        "1st Assistant Director"
+      ],
+      "talentIds": [
+        "theo-supple"
+      ],
+      "id": "work-theo-original",
+      "slug": "work-theo-original",
+      "releaseId": "rel-talent-reveal"
+    },
+    {
+      "title": "Fergie Brittany — Becoming Herself",
+      "kind": "video",
+      "thumbnailUrl": "/media/uploads/01M7DMB5NVPC6MACVRHGKMZEC9.webp",
+      "videoUrl": "/media/uploads/01M7FGC7DW0SP0D0545FX4VBA6.mp4",
+      "externalUrl": "https://www.instagram.com/reel/DKjrzORSoI_/",
+      "platform": "instagram",
+      "description": "Fergie Brittany’s original reveal linked from page 26 of the portfolio.",
+      "myRoles": [
+        "Creative / Director",
+        "Creative Director",
+        "Creative Lead",
+        "1st Assistant Director"
+      ],
+      "talentIds": [
+        "fergie-brittany"
+      ],
+      "id": "work-fergie-original",
+      "slug": "work-fergie-original",
+      "releaseId": "rel-talent-reveal"
+    },
+    {
+      "title": "Lutesha — The Unexpected",
+      "kind": "video",
+      "thumbnailUrl": "/media/uploads/01M7DMB5NR1PEN8M4Y25MM2BZK.webp",
+      "videoUrl": "/media/uploads/01M7FGC7EM8610YK06SXV2BGJM.mp4",
+      "externalUrl": "https://www.instagram.com/reel/DITg2myyQRD/",
+      "platform": "instagram",
+      "description": "Lutesha’s original reveal linked from page 26 of the portfolio.",
+      "myRoles": [
+        "Creative / Director",
+        "Creative Director",
+        "Creative Lead",
+        "1st Assistant Director"
+      ],
+      "talentIds": [
+        "lutesha"
+      ],
+      "id": "work-lutesha-original",
+      "slug": "work-lutesha-original",
+      "releaseId": "rel-talent-reveal"
+    },
+    {
       "title": "The Production Team",
-      "releaseId": "rel-hitam-mv",
-      "talentIds": [
-        "makatita"
-      ],
       "kind": "image",
-      "thumbnailUrl": "/media/portfolio/hitam-crew.webp",
+      "thumbnailUrl": "/media/uploads/01M7DMB5QZ150S4W0DJRFFB96G.webp",
+      "imageUrl": "/media/uploads/01M7DMB5QZ150S4W0DJRFFB96G.webp",
+      "alt": "The HITAM production team pictured in portfolio page 21.",
       "description": "The HITAM production team pictured in portfolio page 21.",
       "myRoles": [
         "Director",
@@ -436,206 +649,104 @@
         "Production Planning",
         "On-set Direction"
       ],
-      "imageUrl": "/media/portfolio/hitam-crew.webp",
-      "alt": "The HITAM production team pictured in portfolio page 21."
+      "talentIds": [
+        "makatita"
+      ],
+      "id": "work-hitam-crew",
+      "slug": "work-hitam-crew",
+      "releaseId": "rel-hitam-mv"
     },
     {
-      "id": "work-lutesha-original",
-      "slug": "work-lutesha-original",
-      "title": "Lutesha — The Unexpected",
-      "releaseId": "rel-talent-reveal",
-      "talentIds": [
-        "lutesha"
-      ],
-      "kind": "external",
-      "thumbnailUrl": "/media/portfolio/lutesha.webp",
-      "description": "Lutesha’s original reveal linked from page 26 of the portfolio.",
-      "myRoles": [
-        "Creative / Director",
-        "Creative Director",
-        "Creative Lead",
-        "1st Assistant Director"
-      ],
-      "externalUrl": "https://www.instagram.com/reel/DITg2myyQRD/",
-      "platform": "instagram"
-    },
-    {
-      "id": "work-fergie-original",
-      "slug": "work-fergie-original",
-      "title": "Fergie Brittany — Becoming Herself",
-      "releaseId": "rel-talent-reveal",
-      "talentIds": [
-        "fergie-brittany"
-      ],
-      "kind": "external",
-      "thumbnailUrl": "/media/portfolio/fergie-brittany.webp",
-      "description": "Fergie Brittany’s original reveal linked from page 26 of the portfolio.",
-      "myRoles": [
-        "Creative / Director",
-        "Creative Director",
-        "Creative Lead",
-        "1st Assistant Director"
-      ],
-      "externalUrl": "https://www.instagram.com/reel/DKjrzORSoI_/",
-      "platform": "instagram"
-    },
-    {
-      "id": "work-theo-original",
-      "slug": "work-theo-original",
-      "title": "Theo Supple — The Character",
-      "releaseId": "rel-talent-reveal",
-      "talentIds": [
-        "theo-supple"
-      ],
-      "kind": "external",
-      "thumbnailUrl": "/media/portfolio/theo-supple.webp",
-      "description": "Theo Supple’s original reveal linked from page 26 of the portfolio.",
-      "myRoles": [
-        "Creative / Director",
-        "Creative Director",
-        "Creative Lead",
-        "1st Assistant Director"
-      ],
-      "externalUrl": "https://www.instagram.com/reel/DRj3L--EhOo/",
-      "platform": "instagram"
-    },
-    {
-      "id": "work-abby-original",
-      "slug": "work-abby-original",
-      "title": "Abby Latip — The Energy",
-      "releaseId": "rel-talent-reveal",
-      "talentIds": [
-        "abby-latip"
-      ],
-      "kind": "external",
-      "thumbnailUrl": "/media/portfolio/abby-latip.webp",
-      "description": "Abby Latip’s original reveal linked from page 26 of the portfolio.",
-      "myRoles": [
-        "Creative / Director",
-        "Creative Director",
-        "Creative Lead",
-        "1st Assistant Director"
-      ],
-      "externalUrl": "https://www.instagram.com/reel/DR1s6lekvyd/",
-      "platform": "instagram"
-    },
-    {
-      "id": "work-harry-original",
-      "slug": "work-harry-original",
-      "title": "Harry Halim — The Reinvention",
-      "releaseId": "rel-talent-reveal",
-      "talentIds": [
-        "harry-halim"
-      ],
-      "kind": "external",
-      "thumbnailUrl": "/media/portfolio/harry-halim.webp",
-      "description": "Harry Halim’s original reveal linked from page 26 of the portfolio.",
-      "myRoles": [
-        "Creative / Director",
-        "Creative Director",
-        "Creative Lead",
-        "1st Assistant Director"
-      ],
-      "externalUrl": "https://www.instagram.com/reel/DW8hebsAcUB/",
-      "platform": "instagram"
-    },
-    {
-      "id": "work-max-original",
-      "slug": "work-max-original",
-      "title": "Max Huang — The New Chapter / Life of Action",
-      "releaseId": "rel-talent-reveal",
-      "talentIds": [
-        "max-huang"
-      ],
-      "kind": "external",
-      "thumbnailUrl": "/media/portfolio/max-huang.webp",
-      "description": "Max Huang’s original reveal linked from page 26 of the portfolio.",
-      "myRoles": [
-        "Creative / Director",
-        "Creative Director",
-        "Creative Lead",
-        "1st Assistant Director"
-      ],
-      "externalUrl": "https://youtube.com/playlist?list=PLo9-y-trgpVh_VWsljH3BtUbE8r8m3aa6",
-      "platform": "youtube"
-    },
-    {
-      "id": "work-fergie-still",
-      "slug": "work-fergie-still",
-      "title": "Fergie Brittany — Portfolio Still",
-      "releaseId": "rel-talent-reveal",
-      "talentIds": [
-        "fergie-brittany"
-      ],
+      "title": "On Set",
       "kind": "image",
-      "thumbnailUrl": "/media/portfolio/fergie-still.webp",
-      "description": "Fergie Brittany’s reveal imagery from portfolio page 32.",
+      "thumbnailUrl": "/media/uploads/01M7DMB5QND7W90R5BAHB2T200.webp",
+      "imageUrl": "/media/uploads/01M7DMB5QND7W90R5BAHB2T200.webp",
+      "alt": "A studio production image from portfolio page 21.",
+      "description": "A studio production image from portfolio page 21.",
       "myRoles": [
-        "Creative / Director",
-        "Creative Director",
-        "Creative Lead",
-        "1st Assistant Director"
+        "Director",
+        "Creative Direction",
+        "Concept Development",
+        "Visual Treatment",
+        "Storyboarding",
+        "Production Planning",
+        "On-set Direction"
       ],
-      "imageUrl": "/media/portfolio/fergie-still.webp",
-      "alt": "Fergie Brittany’s reveal imagery from portfolio page 32."
+      "talentIds": [
+        "makatita"
+      ],
+      "id": "work-hitam-production",
+      "slug": "work-hitam-production",
+      "releaseId": "rel-hitam-mv"
     },
     {
-      "id": "work-harry-still",
-      "slug": "work-harry-still",
-      "title": "Harry Halim — Portfolio Still",
-      "releaseId": "rel-talent-reveal",
-      "talentIds": [
-        "harry-halim"
-      ],
+      "title": "Blok M Night Shoot",
       "kind": "image",
-      "thumbnailUrl": "/media/portfolio/harry-still.webp",
-      "description": "Harry Halim’s reveal imagery from portfolio page 33.",
+      "thumbnailUrl": "/media/uploads/01M7DMB5QBETWEMG6KRVF46GKR.webp",
+      "imageUrl": "/media/uploads/01M7DMB5QBETWEMG6KRVF46GKR.webp",
+      "alt": "The Blok M location from the HITAM production, reproduced from portfolio page 19.",
+      "description": "The Blok M location from the HITAM production, reproduced from portfolio page 19.",
       "myRoles": [
-        "Creative / Director",
-        "Creative Director",
-        "Creative Lead",
-        "1st Assistant Director"
+        "Director",
+        "Creative Direction",
+        "Concept Development",
+        "Visual Treatment",
+        "Storyboarding",
+        "Production Planning",
+        "On-set Direction"
       ],
-      "imageUrl": "/media/portfolio/harry-still.webp",
-      "alt": "Harry Halim’s reveal imagery from portfolio page 33."
+      "talentIds": [
+        "makatita"
+      ],
+      "id": "work-hitam-blok-m",
+      "slug": "work-hitam-blok-m",
+      "releaseId": "rel-hitam-mv"
     },
     {
-      "id": "work-max-still",
-      "slug": "work-max-still",
-      "title": "Max Huang — Portfolio Still",
-      "releaseId": "rel-talent-reveal",
-      "talentIds": [
-        "max-huang"
-      ],
+      "title": "White Supper",
       "kind": "image",
-      "thumbnailUrl": "/media/portfolio/max-action.webp",
-      "description": "Max Huang’s Life of Action imagery from portfolio page 34.",
+      "thumbnailUrl": "/media/uploads/01M7DMB5PX3HTMKNHBHB04HEZ3.webp",
+      "imageUrl": "/media/uploads/01M7DMB5PX3HTMKNHBHB04HEZ3.webp",
+      "alt": "A White Supper scene from the HITAM music video, reproduced from portfolio page 20.",
+      "description": "A White Supper scene from the HITAM music video, reproduced from portfolio page 20.",
       "myRoles": [
-        "Creative / Director",
-        "Creative Director",
-        "Creative Lead",
-        "1st Assistant Director"
+        "Director",
+        "Creative Direction",
+        "Concept Development",
+        "Visual Treatment",
+        "Storyboarding",
+        "Production Planning",
+        "On-set Direction"
       ],
-      "imageUrl": "/media/portfolio/max-action.webp",
-      "alt": "Max Huang’s Life of Action imagery from portfolio page 34."
+      "talentIds": [
+        "makatita"
+      ],
+      "id": "work-hitam-white-supper",
+      "slug": "work-hitam-white-supper",
+      "releaseId": "rel-hitam-mv"
     },
     {
-      "id": "work-sitha-portrait",
-      "slug": "work-sitha-portrait",
-      "title": "Sitha Marino — Portfolio Portrait",
-      "releaseId": "rel-sitha-branded",
-      "talentIds": [
-        "sitha-marino"
-      ],
-      "kind": "image",
-      "thumbnailUrl": "/media/portfolio/sitha-marino.webp",
-      "description": "Sitha Marino’s portrait reproduced from page 9 of the 2026 portfolio. The PDF links her social profiles rather than an individual campaign video.",
+      "title": "HITAM — Official Music Video",
+      "kind": "external",
+      "thumbnailUrl": "/media/uploads/01M7DMB5NN8ERRDTQM7XHZSTFN.webp",
+      "externalUrl": "https://youtu.be/0ERR5BCTcYo",
+      "platform": "youtube",
+      "description": "The official release linked from page 17 of the portfolio.",
       "myRoles": [
-        "Creative Strategist",
-        "Creative Producer"
+        "Director",
+        "Creative Direction",
+        "Concept Development",
+        "Visual Treatment",
+        "Storyboarding",
+        "Production Planning",
+        "On-set Direction"
       ],
-      "imageUrl": "/media/portfolio/sitha-marino.webp",
-      "alt": "Sitha Marino’s portrait reproduced from page 9 of the 2026 portfolio. The PDF links her social profiles rather than an individual campaign video."
+      "talentIds": [
+        "makatita"
+      ],
+      "id": "work-hitam-original",
+      "slug": "work-hitam-original",
+      "releaseId": "rel-hitam-mv"
     }
   ]
 }

@@ -115,9 +115,11 @@ export function NowShowing() {
               ref={videoRef}
               src={currentWork.videoUrl}
               poster={currentWork.posterUrl || currentWork.thumbnailUrl}
+              autoPlay
               muted={isMuted}
               playsInline
-              preload="metadata"
+              loop
+              preload="auto"
               onLoadedMetadata={(event) =>
                 setDuration(
                   Number.isFinite(event.currentTarget.duration) ? event.currentTarget.duration : 0,

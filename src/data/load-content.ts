@@ -1,6 +1,6 @@
 import seed from './content.json';
 import { assertValidContent, type ContentDocument } from './validation';
-import { normalizeCmsData } from './cms-normalize';
+import { linkWorksToProjects, normalizeCmsData } from './cms-normalize';
 import type { ContentEntry } from 'emdash';
 
 const localContent = assertValidContent(seed);
@@ -43,16 +43,24 @@ export async function loadContent(): Promise<ContentDocument> {
   try {
     const [profiles, talents, releases, works] = await Promise.all([
       collection('profiles'), collection('talents'),
-      collection('projects', ['talent_ids', 'work_ids']), collection('works', ['talent_ids']),
+      collection('projects', ['talent_ids', 'work_ids']), collection('works', ['talent_ids', 'release_id']),
     ]);
     if (profiles.length > 1) throw new Error('Keep one published profile in EmDash.');
     if (!profiles.length) { console.info('[content] No published EmDash profile yet; using the portfolio seed.'); return localContent; }
     const profile = { nickname: '', headline: '', bioHeadline: '', bio: '', location: '', email: '', phone: '', linkedin: '', tags: [], awards: [], disciplines: [], ...profiles[0] };
+    const linkedWorks = linkWorksToProjects(releases, works);
+    const linkedReleases = releases.map(project => ({
+      ...project,
+      workIds: [...new Set([
+        ...(project.workIds as string[]),
+        ...linkedWorks.filter(work => work.releaseId === project.id).map(work => String(work.id)),
+      ])].filter(id => linkedWorks.some(work => String(work.id) === id)),
+    }));
     return assertValidContent({
       profile,
-      talents: talents.map(item => ({ ...item, projectIds: releases.filter(project => (project.talentIds as string[]).includes(String(item.id))).map(project => project.id) })),
-      releases: releases.map(item => ({ summary: '', myRoles: [], ...item })),
-      works: works.map(item => ({ myRoles: [], ...item, releaseId: releases.find(project => (project.workIds as string[]).includes(String(item.id)))?.id })),
+      talents: talents.map(item => ({ ...item, projectIds: linkedReleases.filter(project => (project.talentIds as string[]).includes(String(item.id))).map(project => project.id) })),
+      releases: linkedReleases.map(item => ({ summary: '', myRoles: [], ...item })),
+      works: linkedWorks.filter(item => linkedReleases.some(project => project.id === item.releaseId)).map(item => ({ myRoles: [], ...item })),
     });
   } catch (error) {
     // An existing editor dataset must not silently appear to save while the seed is shown.

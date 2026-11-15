@@ -17,7 +17,7 @@ const field = (slug, label, type = "text", validation) => ({
 });
 const select = (slug, label, options) => field(slug, label, "select", { options });
 const repeater = (slug, label, subFields) => field(slug, label, "repeater", { subFields });
-const reference = (slug, label, targetCollection, multiple = false, relation, relationSide) => field(slug, label, "reference", { targetCollection, multiple, ...(relation ? { relation, relationSide } : {}) });
+const reference = (slug, label, targetCollection, multiple = false, relation, relationSide, required = false) => ({ ...field(slug, label, "reference", { targetCollection, multiple, ...(relation ? { relation, relationSide } : {}) }), ...(required ? { required } : {}) });
 
 const listRepeater = (slug, label) => repeater(slug, label, [field("value", "Value")]);
 
@@ -198,7 +198,7 @@ run([
   "--database",
   database,
   "--on-conflict",
-  "skip",
+  process.env.EMDASH_ON_CONFLICT || "update",
   "--uploads-dir",
   uploads,
 ]);

@@ -27,3 +27,20 @@ export function normalizeCmsData(data: Record<string, unknown>, id: string): Rec
   delete normalized.source_id;
   return normalized;
 }
+
+export function linkWorksToProjects(
+  projects: Record<string, unknown>[],
+  works: Record<string, unknown>[],
+): Record<string, unknown>[] {
+  const projectByWork = new Map<string, string>();
+  for (const project of projects) {
+    if (!Array.isArray(project.workIds)) continue;
+    for (const id of project.workIds) projectByWork.set(String(id), String(project.id));
+  }
+  return works.flatMap(work => {
+    const releaseId = work.releaseId || projectByWork.get(String(work.id));
+    return typeof releaseId === 'string' && projects.some(project => project.id === releaseId)
+      ? [{ ...work, releaseId }]
+      : [];
+  });
+}
