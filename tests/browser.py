@@ -1,5 +1,6 @@
 from playwright.sync_api import sync_playwright
 import argparse
+import json
 parser = argparse.ArgumentParser()
 parser.add_argument("--url", default="http://localhost:4321")
 args = parser.parse_args()
@@ -11,6 +12,13 @@ with sync_playwright() as p:
  for width,height in [(390,844),(768,1024),(1440,1000)]:
   page.set_viewport_size({'width':width,'height':height})
   page.goto(args.url,wait_until='networkidle')
+  assert page.title().endswith(' | Creative Portfolio') and 'ON REPEAT' not in page.title()
+  schema=json.loads(page.locator('script[type="application/ld+json"]').text_content())
+  assert schema['@type']=='ProfilePage' and schema['mainEntity']['@type']=='Person'
+  art=page.locator('.cover-art').first
+  box=art.bounding_box()
+  assert abs(box['width']-box['height'])<1
+  assert art.evaluate('(img)=>getComputedStyle(img).objectPosition')=='50% 50%'
   page.get_by_role('heading',name='Portfolio',exact=True).wait_for()
   nav=page.get_by_role('navigation',name='Main navigation')
   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
@@ -40,6 +48,10 @@ with sync_playwright() as p:
   page.screenshot(path=f'/private/tmp/creativico-talent-{width}.png')
   page.locator('.project-row').click()
   page.get_by_role('heading',name='KITE Talent Reveal Project',exact=True).wait_for()
+  album=page.locator('.album-art')
+  album_box=album.bounding_box()
+  assert abs(album_box['width']-album_box['height'])<1
+  assert album.evaluate('(img)=>getComputedStyle(img).objectFit')=='cover'
   page.screenshot(path=f'/private/tmp/creativico-project-{width}.png')
   page.get_by_role('button',name='Back',exact=True).click()
   page.get_by_role('heading',name='Theo Supple',exact=True).wait_for()
@@ -77,5 +89,12 @@ with sync_playwright() as p:
   page.get_by_role('button',name='Reset filters').click()
   assert page.locator('.project-card').count()==3
   print(f'{width}: all screens, nested back, original release, image queue, notes, Escape, mini player, search, empty/reset passed')
+ page.goto(args.url,wait_until='networkidle')
+ if page.locator('.cover-art').first.get_attribute('src').startswith('/_image?'):
+  page.route('**/_image?**',lambda route:route.fulfill(status=500,body='Forced transform failure'))
+  page.reload(wait_until='networkidle')
+  page.wait_for_function('document.querySelector(".cover-art").naturalWidth > 0')
+  assert page.locator('.cover-art').first.get_attribute('src').startswith('/_emdash/api/media/file/')
+  print('WebP transform failure before hydration: original-image fallback passed')
  assert not errors,errors
  browser.close()
