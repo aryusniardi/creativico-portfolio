@@ -34,10 +34,10 @@ The legacy Pages project `creativico-portfolio` is updated by CI with a branch-s
 - [x] `development` deploy succeeds at the preview Worker URL.
 - [x] Initial admin is provisioned before public deployment and setup is closed.
 - [x] `/_emdash/admin/login` accepts the registered passkey.
-- [ ] CMS uploads persist in R2 and survive a new deployment.
-- [ ] Legacy Pages URLs redirect to the matching Worker URL.
+- [x] CMS uploads persist in R2 and survive a new deployment.
+- [x] Legacy Pages URLs redirect to the matching Worker URL.
 
-Manual production and preview deployments, setup closure, native one-time login, passkey registration/login, and media uploads have passed. CI branch deployment and post-deploy persistence are the remaining integration checks.
+Production and preview GitHub Actions deployments, setup closure, native one-time login, passkey registration/login, media persistence across redeployments, and legacy redirects passed. Anonymous preview requests hide draft revisions until publication. Original content is restored after the publish check.
 
 ## Ownership and dependencies
 
@@ -46,4 +46,4 @@ Manual production and preview deployments, setup closure, native one-time login,
 - Security reviewer: read-only review of auth and deployment boundaries before deployment.
 - Order: provision isolated stores, import seed/admin, build/review, deploy, verify authentication and media, push workflow to both branches, inspect both CI runs.
 
-- [ ] GitHub Actions succeeds for both branches at the final deployed commit.
+- [x] GitHub Actions succeeds for both branches at application commit `69f4084`.

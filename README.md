@@ -25,7 +25,7 @@ Images and videos can be mixed in any order. Previous/next follows the project o
 EmDash was previously installed but unconfigured. It now uses local SQLite (`data.db`) and local upload storage (`uploads/`). The initial portfolio photographs are registered in its Media Library. These local files are ignored by Git; back up the database and uploads together.
 
 1. Run `npm run cms:seed` once to initialize the portfolio. Repeating it skips existing entries, preserving edits.
-2. Run `npm run dev`. Open `/_emdash/admin/setup` using the `localhost` URL and create your owner account/passkey. The current preview is `http://localhost:4322/_emdash/admin/setup`. No owner account has been created for you.
+2. Run `npm run dev`. Open `/_emdash/admin/setup` using the `localhost` URL and create your owner account/passkey. The current preview is `http://localhost:4322/_emdash/admin/setup`. No local owner account has been created for you; the online environments have their own admin account.
 3. Edit the existing **Profile** record for biography, photo, contacts, social links, tags, five disciplines and awards.
 4. Add or edit **Talents**, **Projects** and **Media** using the forms. Portraits, covers, images and videos use upload/library selectors; roles, credits, metrics and awards use repeatable fields. Menus and section headings remain fixed.
 5. For a media item, select **Image**, **Video**, or **External**, choose its project, add its thumbnail/source and optional caption/alt text, then publish. Choose talents using the named picker. The project’s **Ordered media** field supports selection and reordering; its project/media relationship is shared, so selecting a project on the media item also links it to that project.
