@@ -1,6 +1,39 @@
 name = "creativico-portfolio"
+main = "src/worker.ts"
 compatibility_date = "2026-03-01"
 compatibility_flags = ["nodejs_compat"]
 
 [vars]
 ENVIRONMENT = "production"
+EMDASH_SITE_URL = "https://creativico-portfolio.aryusniardi15.workers.dev"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "creativico-portfolio-production"
+database_id = "ccdbc86f-fa9a-4004-b496-6610acfe5ebd"
+
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "creativico-portfolio-production"
+
+[triggers]
+crons = ["* * * * *"]
+
+[env.preview]
+name = "creativico-portfolio-preview"
+
+[env.preview.vars]
+ENVIRONMENT = "preview"
+EMDASH_SITE_URL = "https://creativico-portfolio-preview.aryusniardi15.workers.dev"
+
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "creativico-portfolio-preview"
+database_id = "1f959ae9-4bf2-425e-bc8d-7ccfdbfa7701"
+
+[[env.preview.r2_buckets]]
+binding = "MEDIA"
+bucket_name = "creativico-portfolio-preview"
+
+[env.preview.triggers]
+crons = ["* * * * *"]

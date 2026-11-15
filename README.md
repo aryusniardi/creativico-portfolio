@@ -20,7 +20,7 @@ Images and videos can be mixed in any order. Previous/next follows the project o
 
 ## Content management
 
-### Local EmDash editing
+### EmDash editing
 
 EmDash was previously installed but unconfigured. It now uses local SQLite (`data.db`) and local upload storage (`uploads/`). The initial portfolio photographs are registered in its Media Library. These local files are ignored by Git; back up the database and uploads together.
 
@@ -30,11 +30,11 @@ EmDash was previously installed but unconfigured. It now uses local SQLite (`dat
 4. Add or edit **Talents**, **Projects** and **Media** using the forms. Portraits, covers, images and videos use upload/library selectors; roles, credits, metrics and awards use repeatable fields. Menus and section headings remain fixed.
 5. For a media item, select **Image**, **Video**, or **External**, choose its project, add its thumbnail/source and optional caption/alt text, then publish. Choose talents using the named picker. The project’s **Ordered media** field supports selection and reordering; its project/media relationship is shared, so selecting a project on the media item also links it to that project.
 6. Publish changed records in EmDash. Reload the local site to see the published changes. Drafts stay out of the public dataset. Unpublish linked media before unpublishing its project; the export rejects broken published references.
-7. For the static public website, run `npm run cms:export`, then `npm run build`. Export validates first, copies uploaded files to `public/media/uploads`, and updates `src/data/content.json` atomically. Inspect that diff before deployment.
+7. On the deployed CMS, publishing updates the matching environment’s website on its next request. Local editing uses a separate SQLite database; `npm run cms:export` remains available to create a validated fallback snapshot and copy local uploads into `public/media/uploads`. It is not required for online publishing.
 
-There is no JSON or internal-ID entry required in the editor. New records use EmDash’s normal title/slug flow and dynamic reference pickers. Adding content is form-based; publishing to the static website still requires the export/build step.
+There is no JSON or internal-ID entry required in the editor. New records use EmDash’s normal title/slug flow and dynamic reference pickers. Drafts are excluded from the public website.
 
-The current production output is static. It has no online admin or write API. A deployed EmDash editor requires persistent runtime, database, media storage and authentication configuration; none has been provisioned or deployed here.
+Production and preview use Cloudflare Workers with separate D1 databases and R2 buckets. Local editing remains independent. See [deployment and CMS access](docs/cloudflare-deployment.md).
 
 
 ## Development and verification
@@ -60,7 +60,7 @@ The browser check requires Python Playwright and Chromium. `tests/browser-media.
 
 ## Deployment
 
-The public build is static output in `dist`. No deployment has been performed. A deployed EmDash admin needs persistent runtime, database, media storage and authentication; installed Cloudflare dependencies alone do not configure those services.
+Push to `development` deploys preview; push or merge to `main` deploys production through `.github/workflows/deploy.yml`. The pipeline validates types and content tests, builds the Worker, deploys it, and updates the corresponding legacy Pages redirect. See [deployment details](docs/cloudflare-deployment.md).
 
 ## Log
 
@@ -69,3 +69,5 @@ The public build is static output in `dist`. No deployment has been performed. A
 - 2026-11-15 — Restored the always-mobile phone simulation and actual Liquid Glass navigation/mini player after correcting an unintended desktop redesign.
 
 - 2026-11-15 — Hid scrollbars and the simulated status row; added mouse drag scrolling alongside native touch gestures; made Notes permanent and fixed viewer content overlap.
+
+- 2026-11-15 — Enabled live Cloudflare Workers/EmDash with isolated D1/R2 production and preview, native passkey admin access, draft revisions before publishing, and GitHub Actions deployment for main/development. Documented account separation and CMS access.

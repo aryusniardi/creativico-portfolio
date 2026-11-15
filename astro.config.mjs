@@ -3,34 +3,24 @@ import tailwindcss from "@tailwindcss/vite";
 import emdash, { local } from "emdash/astro";
 import { sqlite } from "emdash/db";
 import { defineConfig, sessionDrivers } from "astro/config";
+import cloudflare from "@astrojs/cloudflare";
+import { d1, r2 } from "@emdash-cms/cloudflare";
 
 const emdashDev = process.env.NODE_ENV === "development" || process.argv.includes("dev");
 
 export default defineConfig({
-  output: "static",
+  output: "server",
+  ...(!emdashDev ? { adapter: cloudflare({ imageService: "passthrough" }) } : {}),
   integrations: [
     react(),
-    {
-      name: "portfolio-rendering",
-      hooks: {
-        "astro:route:setup": ({ route }) => {
-          if (route.component.endsWith("src/pages/index.astro")) route.prerender = !emdashDev;
-        },
-      },
-    },
-    ...(emdashDev
-      ? [
-          emdash({
-            database: sqlite({ url: "file:./data.db" }),
-            storage: local({
-              directory: "./uploads",
-              baseUrl: "/_emdash/api/media/file",
-            }),
-            images: false,
-            admin: { siteName: "Creativico Content" },
-          }),
-        ]
-      : []),
+    emdash({
+      database: emdashDev ? sqlite({ url: "file:./data.db" }) : d1({ binding: "DB" }),
+      storage: emdashDev
+        ? local({ directory: "./uploads", baseUrl: "/_emdash/api/media/file" })
+        : r2({ binding: "MEDIA" }),
+      images: false,
+      admin: { siteName: "Creativico Content" },
+    }),
   ],
   vite: {
     plugins: [tailwindcss()],

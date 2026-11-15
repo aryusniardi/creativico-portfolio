@@ -1,11 +1,6 @@
 import { defineLiveCollection } from "astro:content";
+import { emdashLoader } from "emdash/runtime";
 
-const collections = import.meta.env.DEV
-  ? {
-      _emdash: defineLiveCollection({
-        loader: (await import(/* @vite-ignore */ "emdash/runtime")).emdashLoader(),
-      }),
-    }
-  : {};
-
-export { collections };
+export const collections = {
+  _emdash: defineLiveCollection({ loader: emdashLoader() }),
+};

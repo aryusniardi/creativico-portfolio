@@ -14,3 +14,4 @@ uploads/
 .astro/sessions/
 
 .emdash-seed.generated.json
+.wrangler/

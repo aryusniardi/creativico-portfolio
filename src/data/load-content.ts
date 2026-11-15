@@ -5,10 +5,9 @@ import type { ContentEntry } from 'emdash';
 
 const localContent = assertValidContent(seed);
 
-/** Production is a static snapshot; local EmDash is the authoring source. */
+/** Read published CMS content on each request, with seed content before initial import. */
 export async function loadContent(): Promise<ContentDocument> {
-  if (!import.meta.env.DEV) return localContent;
-  const { getEmDashCollection, getEmDashEntry, getEmDashReferences } = await import(/* @vite-ignore */ 'emdash');
+  const { getEmDashCollection, getEmDashEntry, getEmDashReferences } = await import('emdash');
   async function allEntries(collection: string) {
     const entries: ContentEntry[] = [];
     let cursor: string | undefined;

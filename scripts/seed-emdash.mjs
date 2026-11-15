@@ -24,6 +24,7 @@ const listRepeater = (slug, label) => repeater(slug, label, [field("value", "Val
 const collections = [
   {
     slug: "profiles",
+    supports: ["revisions"],
     titleField: "name",
     admin: { quickCreate: false },
     label: "Profiles",
@@ -48,6 +49,7 @@ const collections = [
   },
   {
     slug: "talents",
+    supports: ["revisions"],
     titleField: "name",
     label: "Talents",
     labelSingular: "Talent",
@@ -63,6 +65,7 @@ const collections = [
   },
   {
     slug: "projects",
+    supports: ["revisions"],
     label: "Projects",
     labelSingular: "Project",
     routable: false,
@@ -89,6 +92,7 @@ const collections = [
   },
   {
     slug: "works",
+    supports: ["revisions"],
     label: "Media",
     labelSingular: "Media item",
     routable: false,

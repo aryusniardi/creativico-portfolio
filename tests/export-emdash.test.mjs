@@ -24,6 +24,11 @@ function setup() {
 test("exports published content without changing the repository seed", () => {
   const { dir, database, output } = setup();
   try {
+    const db = new DatabaseSync(database);
+    for (const row of db.prepare("SELECT slug, supports FROM _emdash_collections").all()) {
+      assert.ok(JSON.parse(row.supports).includes("revisions"), `${row.slug} must stage edits before publishing`);
+    }
+    db.close();
     execFileSync(process.execPath, ["scripts/export-emdash.mjs"], {
       cwd: root,
       env: { ...process.env, EMDASH_DB: database, EMDASH_CONTENT_OUTPUT: output, EMDASH_UPLOADS: join(dir, "uploads"), EMDASH_MEDIA_OUTPUT: join(dir, "public") },

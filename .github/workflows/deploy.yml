@@ -1,0 +1,61 @@
+name: Deploy Creativico
+
+on:
+  push:
+    branches:
+      - main
+      - development
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref_name == 'main' || github.ref_name == 'development'
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_ENV: ${{ github.ref_name == 'development' && 'preview' || '' }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.23.4
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck and validate
+        run: |
+          node node_modules/typescript/bin/tsc --noEmit
+          node --test tests/*.test.mjs
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy Worker preview
+        if: github.ref_name == 'development'
+        run: npx wrangler deploy
+
+      - name: Deploy Worker production
+        if: github.ref_name == 'main'
+        run: npx wrangler deploy
+
+      - name: Update legacy Pages redirect
+        env:
+          WORKER_URL: ${{ github.ref_name == 'development' && 'https://creativico-portfolio-preview.aryusniardi15.workers.dev' || 'https://creativico-portfolio.aryusniardi15.workers.dev' }}
+        run: |
+          pages_dir="$RUNNER_TEMP/creativico-pages-redirect"
+          mkdir -p "$pages_dir"
+          printf '/* %s/:splat 302\n' "$WORKER_URL" > "$pages_dir/_redirects"
+          npx wrangler pages deploy "$pages_dir" --project-name=creativico-portfolio --branch "$GITHUB_REF_NAME"
