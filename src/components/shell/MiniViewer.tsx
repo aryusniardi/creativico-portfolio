@@ -1,7 +1,8 @@
+import { PortfolioImage } from "../content/PortfolioImage";
 import { GlassCard } from "@zakisheriff/liquid-glass";
 import { Play, Pause, SkipForward } from "lucide-react";
 import { usePlayer } from "../video/PlayerContext";
-import { mediaKind } from "../../data/media";
+import { mediaKind, youtubeEmbedUrl } from "../../data/media";
 
 export function MiniViewer() {
   const { currentWork, isPlaying, togglePlay, openNowShowing, next, queue, index, activeRelease } =
@@ -14,13 +15,13 @@ export function MiniViewer() {
         onClick={openNowShowing}
         aria-label={`Open ${currentWork.title}`}
       >
-        <img src={currentWork.thumbnailUrl} alt="" />
+        <PortfolioImage size={112} src={currentWork.thumbnailUrl} alt="" />
         <span className="row-copy">
           <span>{currentWork.title}</span>
           <small className="secondary">{activeRelease?.title}</small>
         </span>
       </button>
-      {mediaKind(currentWork) === "video" && (
+      {mediaKind(currentWork) === "video" && !youtubeEmbedUrl(currentWork.videoUrl) && (
         <button
           className="icon-button"
           onClick={togglePlay}

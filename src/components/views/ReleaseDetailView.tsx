@@ -1,3 +1,4 @@
+import { PortfolioImage } from "../content/PortfolioImage";
 import { ChevronLeft, Play, Image as ImageIcon } from "lucide-react";
 import { useContent } from "../content/ContentContext";
 import { projectMedia, mediaKind } from "../../data/media";
@@ -34,7 +35,7 @@ export function ReleaseDetailView({
         <span>{release.title}</span>
       </header>
       <div className="album-header">
-        <img className="album-art" src={release.coverUrl} alt={release.title} />
+        <PortfolioImage className="album-art" src={release.coverUrl} alt={release.title} />
         <div className="album-copy">
           <h1>{release.title}</h1>
           {talents.length > 0 && (
@@ -66,7 +67,7 @@ export function ReleaseDetailView({
       {media.length > 0 ? (
         <section>
           <h2>
-            Tracklist / Content Pieces <span className="secondary count">{media.length}</span>
+            Project Media <span className="secondary count">{media.length}</span>
           </h2>
           <div className="track-list">
             {media.map((work, index) => (

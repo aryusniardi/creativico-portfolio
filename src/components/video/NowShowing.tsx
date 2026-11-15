@@ -1,3 +1,4 @@
+import { PortfolioImage } from "../content/PortfolioImage";
 import { useEffect, useRef, useState } from "react";
 import {
   ChevronDown,
@@ -10,7 +11,7 @@ import {
   VolumeX,
 } from "lucide-react";
 import { usePlayer } from "./PlayerContext";
-import { mediaKind, platformName } from "../../data/media";
+import { mediaKind, platformName, youtubeEmbedUrl } from "../../data/media";
 
 export function NowShowing() {
   const {
@@ -55,9 +56,11 @@ export function NowShowing() {
     if (layoutRef.current) layoutRef.current.scrollTop = 0;
   }, [currentWork?.id]);
   if (!currentWork) return null;
-  const showVideo = kind === "video" && Boolean(currentWork.videoUrl) && !failed;
+  const embedUrl = kind === "image" ? null : youtubeEmbedUrl(kind === "video" ? currentWork.videoUrl : currentWork.externalUrl);
+  const showEmbed = Boolean(embedUrl) && !failed;
+  const showVideo = kind === "video" && Boolean(currentWork.videoUrl) && !showEmbed && !failed;
   const showImage = !showVideo && kind === "image" && !failed;
-  const showExternal = !showVideo && !showImage;
+  const showExternal = !showVideo && !showImage && !showEmbed;
   const formatTime = (value: number) =>
     `${Math.floor(value / 60)}:${String(Math.floor(value % 60)).padStart(2, "0")}`;
   return (
@@ -79,10 +82,10 @@ export function NowShowing() {
             <ChevronDown />
           </button>
           <div>
-            <span className="metadata">Now Showing</span>
+            <span className="metadata">Media Viewer</span>
             <p>{activeRelease?.title}</p>
           </div>
-          {kind === "video" ? (
+          {showVideo ? (
             <button
               className="icon-button glass"
               onClick={toggleMute}
@@ -95,6 +98,17 @@ export function NowShowing() {
           )}
         </header>
         <div className="viewer-stage">
+          {showEmbed && isNowShowingOpen && (
+            <iframe
+              key={currentWork.id}
+              src={embedUrl!}
+              title={`${currentWork.title} — YouTube video`}
+              allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              onError={() => setFailedId(currentWork.id)}
+            />
+          )}
           {showVideo && (
             <video
               key={currentWork.id}
@@ -131,7 +145,8 @@ export function NowShowing() {
             </video>
           )}
           {showImage && (
-            <img
+            <PortfolioImage
+              size={960}
               key={currentWork.id}
               src={currentWork.imageUrl || currentWork.thumbnailUrl}
               alt={currentWork.alt || currentWork.title}
@@ -140,7 +155,9 @@ export function NowShowing() {
           )}
           {showExternal && (
             <div className="external-preview">
-              {!failed && <img src={currentWork.posterUrl || currentWork.thumbnailUrl} alt="" />}
+              {!failed && (
+                <PortfolioImage src={currentWork.posterUrl || currentWork.thumbnailUrl} alt="" />
+              )}
               <p className="secondary" role={failed ? "status" : undefined}>
                 {failed || (kind === "video" && !currentWork.videoUrl)
                   ? "This media could not be loaded."
@@ -160,6 +177,16 @@ export function NowShowing() {
             </div>
           )}
         </div>
+        {showEmbed && (
+          <a
+            className="secondary viewer-source"
+            href={currentWork.externalUrl || currentWork.videoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open original on YouTube
+          </a>
+        )}
         <div className="viewer-footer">
           <div className="viewer-title-row">
             <div>

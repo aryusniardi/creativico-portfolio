@@ -1,4 +1,4 @@
-# ON REPEAT — Creativico
+# Creativico — Victor Decha Zhevanya’s Creative Portfolio
 
 Victor Decha Zhevanya’s portfolio, built with Astro 7, React 19 and Tailwind CSS. Content and photographs were imported from the user’s updated 38-page 2026 portfolio: 8 talents, 3 projects and 15 media items. See [source details](docs/portfolio-source.md).
 
@@ -14,9 +14,13 @@ A project’s `workIds` is its ordered media list. Each media item has one kind:
 
 - `image`: opens `imageUrl` (or the thumbnail) at its natural proportions, with alt text.
 - `video`: plays a directly hosted `videoUrl`, with optional poster, captions and duration.
-- `external`: opens the original platform’s URL. The PDF provides YouTube/Instagram links, not source MP4s.
+- `external`: YouTube video and playlist URLs embed inside the viewer; other platforms retain an original link. Embeds request muted autoplay when opened and stop when closed. Playback still depends on browser and video-owner restrictions.
 
 Images and videos can be mixed in any order. Previous/next follows the project order. The viewer supports keyboard dismissal, focus restoration, always-visible creative notes and an accessible scrubber. Media, controls and notes remain in one vertical scroll flow without overlap. Direct video continues through the mini player when the viewer closes; changing to an image stops it.
+
+Project artwork is displayed in a 1:1 square with a centered fill crop. Use a centered subject and preferably a 1200 × 1200 px source; full media images retain their natural framing. Matching artwork and YouTube instructions are shown in EmDash field labels.
+
+CMS images are served through size-bound WebP derivatives (quality 80) using EmDash’s native Cloudflare Images endpoint. Original uploads remain in R2. If a transformation fails, the image falls back to the original; already optimized static WebP assets are unchanged.
 
 ## Content management
 

@@ -4,12 +4,38 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  name?: string;
+  headline?: string;
+  linkedin?: string;
 }
 
 const {
-  title = "ON REPEAT — Creativico Talent Portfolio",
-  description = "Curated creative content discography for talents, creators, and entertainment brands.",
+  title = "Creativico — Creative Portfolio",
+  description = "Selected creative strategy, production and direction projects.",
+  image,
+  name,
+  headline,
+  linkedin,
 } = Astro.props;
+const canonical = new URL("/", Astro.site!).href;
+const preview = Astro.url.hostname !== Astro.site!.hostname;
+const socialImage = image ? new URL(image, Astro.url.origin).href : undefined;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  url: canonical,
+  name: title,
+  description,
+  mainEntity: {
+    "@type": "Person",
+    name,
+    jobTitle: headline,
+    image: socialImage,
+    url: canonical,
+    ...(linkedin ? { sameAs: [linkedin] } : {}),
+  },
+};
 ---
 
 <!doctype html>
@@ -21,6 +47,20 @@ const {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={preview ? "noindex, nofollow" : "index, follow, max-image-preview:large"} />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Creativico Portfolio" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {socialImage && <meta property="og:image" content={socialImage} />}
+    {socialImage && <meta property="og:image:alt" content={name} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImage && <meta name="twitter:image" content={socialImage} />}
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData).replaceAll("<", "\\u003c")} />
     <meta name="theme-color" content="#000000" />
   </head>
   <body>

@@ -30,3 +30,13 @@ All four collections enable EmDash revisions, so saving stages an unpublished ed
 Before pushing, run the production and preview builds, TypeScript, and `node --test tests/*.test.mjs`. After deploying, check the website, protected CMS login, setup closure, published content and an R2-backed media URL in each environment. Verify the GitHub Actions run on both branches before treating automatic deployment as operational.
 
 Verified 2026-11-15: both branch workflows succeeded at `69f4084`; live passkey registration/login, one-time-link reuse rejection, upload/download, preview draft privacy and publication, legacy redirects, and three portfolio viewports passed. Test uploads were checked after CI redeployment before cleanup.
+
+## Portfolio SEO and media
+
+The public title is derived from the published profile name and identifies the site as a creative portfolio. The homepage includes canonical, Open Graph, Twitter and ProfilePage/Person JSON-LD metadata. The single-page application has one public canonical URL, listed in `/sitemap.xml`. Production robots permits the portfolio and public media while excluding CMS routes; preview is noindex and disallowed by robots. Update Astro's `site` before moving production to a custom hostname.
+
+Astro's `cloudflare-binding` image service provisions `IMAGES` for each Worker. EmDash's native image endpoint reads R2 originals and serves width-bound WebP derivatives at quality 80. Local development retains original images. The shared image component falls back to the original if a transform fails. This optimizes delivery and does not destructively convert uploads in storage. No Images subscription upgrade is performed. The default [Images Free plan](https://developers.cloudflare.com/images/pricing/) includes 5,000 unique transformations per month; exceeding that rejects new transforms, so the original fallback remains available.
+
+Artwork uses square display boxes, `object-fit: cover` and `object-position: center center`; full media is not square-cropped. The seed includes artwork and YouTube instructions, and existing online field labels must be updated through the authenticated schema API because seeding skips existing definitions.
+
+YouTube watch, short, shorts/live, embed and playlist URLs are parsed against exact allowed YouTube hosts. Only the derived privacy-enhanced embed URL is loaded, and only while the viewer is open. The iframe requests muted autoplay with native player controls. It is removed when closed; direct uploaded video retains the existing persistent mini-player. Other providers keep an external link.

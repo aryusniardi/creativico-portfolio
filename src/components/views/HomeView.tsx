@@ -1,3 +1,4 @@
+import { PortfolioImage } from "../content/PortfolioImage";
 import { useContent } from "../content/ContentContext";
 import { usePlayer } from "../video/PlayerContext";
 import { ProjectCard, MediaRow } from "../content/ContentItems";
@@ -19,9 +20,12 @@ export function HomeView({ onSelectRelease, onSelectTalent, onAbout }: HomeViewP
   return (
     <div className="page home-page">
       <header className="page-header">
-        <h1>Home</h1>
+        <div>
+          <h1>Portfolio</h1>
+          <p className="secondary">{PROFILE.name}</p>
+        </div>
         <button className="account-button" onClick={onAbout} aria-label={`About ${PROFILE.name}`}>
-          <img src={PROFILE.portraitUrl} alt="" />
+          <PortfolioImage size={96} src={PROFILE.portraitUrl} alt="" />
         </button>
       </header>
       {featured.length > 0 && (
@@ -30,7 +34,7 @@ export function HomeView({ onSelectRelease, onSelectTalent, onAbout }: HomeViewP
           <div className="featured-rail">
             {featured.map((release) => (
               <button className="project-card" key={release.id} onClick={() => onSelectRelease(release)}>
-                <img className="cover-art" src={release.coverUrl} alt="" />
+                <PortfolioImage className="cover-art" src={release.coverUrl} alt="" />
                 <span className="card-subtitle secondary">{release.brand || release.year}</span>
                 <span className="card-title">{release.title}</span>
                 <span className="featured-summary">{release.summary}</span>
@@ -40,7 +44,7 @@ export function HomeView({ onSelectRelease, onSelectTalent, onAbout }: HomeViewP
         </section>
       )}
       <section>
-        <h2>Recent Releases</h2>
+        <h2>Recent Projects</h2>
         {recent.length ? (
           <div className="artwork-rail">
             {recent.map((release) => (
@@ -53,7 +57,7 @@ export function HomeView({ onSelectRelease, onSelectTalent, onAbout }: HomeViewP
       </section>
       {WORKS.length > 0 && (
         <section>
-          <h2>On Repeat</h2>
+          <h2>Selected Work</h2>
           <div className="track-list">
             {WORKS.slice(0, 4).map((work) => (
               <MediaRow key={work.id} work={work} onSelect={playWork} />
@@ -71,7 +75,7 @@ export function HomeView({ onSelectRelease, onSelectTalent, onAbout }: HomeViewP
                 className="talent-card"
                 onClick={() => onSelectTalent(talent.id)}
               >
-                <img src={talent.portraitUrl} alt="" loading="lazy" />
+                <PortfolioImage size={192} src={talent.portraitUrl} alt="" loading="lazy" />
                 <span>{talent.name}</span>
               </button>
             ))}

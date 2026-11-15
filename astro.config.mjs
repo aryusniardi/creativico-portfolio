@@ -9,8 +9,9 @@ import { d1, r2 } from "@emdash-cms/cloudflare";
 const emdashDev = process.env.NODE_ENV === "development" || process.argv.includes("dev");
 
 export default defineConfig({
+  site: "https://creativico-portfolio.aryusniardi15.workers.dev",
   output: "server",
-  ...(!emdashDev ? { adapter: cloudflare({ imageService: "passthrough" }) } : {}),
+  ...(!emdashDev ? { adapter: cloudflare({ imageService: "cloudflare-binding" }) } : {}),
   integrations: [
     react(),
     emdash({
@@ -18,7 +19,7 @@ export default defineConfig({
       storage: emdashDev
         ? local({ directory: "./uploads", baseUrl: "/_emdash/api/media/file" })
         : r2({ binding: "MEDIA" }),
-      images: false,
+      images: !emdashDev,
       admin: { siteName: "Creativico Content" },
     }),
   ],

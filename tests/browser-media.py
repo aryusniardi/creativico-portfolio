@@ -1,5 +1,5 @@
 """Direct-video fixture without changing portfolio data or the CMS database.
-Run after build, with dist served at http://127.0.0.1:4323.
+Run against a local server or deployed preview with --url.
 Requires /private/tmp/creativico-test-video.mp4 (a short H.264 test clip).
 """
 from html.parser import HTMLParser
@@ -7,30 +7,39 @@ from html import escape
 from pathlib import Path
 import json
 import re
+import argparse
+from urllib.request import Request, urlopen
 from playwright.sync_api import sync_playwright
 
 class IslandParser(HTMLParser):
  def handle_starttag(self,tag,attrs):
   if tag=='astro-island': self.props=json.loads(dict(attrs)['props'])
 
-source=Path('dist/index.html').read_text()
+args=argparse.ArgumentParser()
+args.add_argument('--url',default='http://127.0.0.1:4323')
+base=args.parse_args().url.rstrip('/')
+with urlopen(Request(base+'/',headers={'User-Agent':'Mozilla/5.0'})) as response:
+ source=response.read().decode()
 parser=IslandParser();parser.feed(source)
 media=parser.props['content'][1]['works'][1]
 work=next(item[1] for item in media if item[1]['id'][1]=='work-max-still')
 work['kind']=[0,'video'];work['videoUrl']=[0,'/__test-video.mp4']
+missing=next(item[1] for item in media if item[1]['id'][1]=='work-harry-still')
+missing['imageUrl']=[0,'/__test-image.webp']
 source=re.sub(r'props="[^"]*"',lambda match:'props="'+escape(json.dumps(parser.props),quote=True)+'"',source,count=1)
 with sync_playwright() as p:
  browser=p.chromium.launch()
  page=browser.new_page(viewport={'width':390,'height':844})
  errors=[];page.on('pageerror',lambda error:errors.append(str(error)))
- page.route('http://127.0.0.1:4323/',lambda route:route.fulfill(status=200,content_type='text/html',body=source))
+ page.route(base+'/',lambda route:route.fulfill(status=200,content_type='text/html',body=source))
+ page.route('**/__test-image.webp',lambda route:route.fulfill(status=200,content_type='image/webp',body=Path('public/media/portfolio/harry-still.webp').read_bytes()))
  def video_response(route):
   data=Path('/private/tmp/creativico-test-video.mp4').read_bytes()
   requested=route.request.headers.get('range','bytes=0-').replace('bytes=','').split('-')
   start=int(requested[0] or 0);end=int(requested[1]) if requested[1] else len(data)-1
   route.fulfill(status=206,content_type='video/mp4',headers={'Accept-Ranges':'bytes','Content-Range':f'bytes {start}-{end}/{len(data)}'},body=data[start:end+1])
  page.route('**/__test-video.mp4',video_response)
- page.goto('http://127.0.0.1:4323/',wait_until='networkidle')
+ page.goto(base+'/',wait_until='networkidle')
  page.get_by_role('navigation').get_by_role('tab',name='Campaigns',exact=True).click()
  page.get_by_role('button',name='KITE Talent Reveal Project').click()
  opener=page.get_by_role('main').get_by_role('button',name='Max Huang — Portfolio Still')
@@ -55,7 +64,7 @@ with sync_playwright() as p:
  page.get_by_role('dialog').locator('.viewer-stage > img').wait_for(state='visible')
  assert not page.locator('video').count()
  page.get_by_role('dialog').get_by_role('button',name='Next media').click()
- page.route('**/harry-still.webp',lambda route:route.abort())
+ page.route('**/__test-image.webp',lambda route:route.abort())
  page.get_by_role('dialog').get_by_role('button',name='Previous media').click()
  page.get_by_role('dialog').get_by_text('This media could not be loaded.').wait_for()
  assert page.get_by_role('dialog').locator('.viewer-stage img').count()==0

@@ -3,8 +3,18 @@ import Layout from "../layouts/Layout.astro";
 import PortfolioShell from "../components/PortfolioShell";
 import { loadContent } from "../data/load-content";
 const content = await loadContent();
+const { profile } = content;
+const title = `${profile.name} | Creative Portfolio`;
+const description = `Creative portfolio of ${profile.name}, ${profile.headline.replaceAll(" | ", ", ")}. Selected campaigns, music videos and brand collaborations.`;
 ---
 
-<Layout title="ON REPEAT — Creativico Creative Portfolio" description={content.profile.bioHeadline}>
+<Layout
+  title={title}
+  description={description}
+  image={profile.portraitUrl}
+  name={profile.name}
+  headline={profile.headline}
+  linkedin={profile.linkedin}
+>
   <PortfolioShell content={content} client:load />
 </Layout>

@@ -1,3 +1,4 @@
+import { PortfolioImage } from "../content/PortfolioImage";
 import { ChevronRight } from "lucide-react";
 import { useContent } from "../content/ContentContext";
 
@@ -17,7 +18,7 @@ export function TalentsView({ onSelectTalent }: { onSelectTalent: (id: string) =
               className="talent-row"
               onClick={() => onSelectTalent(talent.id)}
             >
-              <img src={talent.portraitUrl} alt="" loading="lazy" />
+              <PortfolioImage size={128} src={talent.portraitUrl} alt="" loading="lazy" />
               <span className="row-copy">
                 <span>{talent.name}</span>
                 <small className="secondary">

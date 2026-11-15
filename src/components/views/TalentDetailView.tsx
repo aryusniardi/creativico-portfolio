@@ -1,3 +1,4 @@
+import { PortfolioImage } from "../content/PortfolioImage";
 import { ChevronLeft } from "lucide-react";
 import { useContent } from "../content/ContentContext";
 import { ProjectRow } from "../content/ContentItems";
@@ -33,7 +34,7 @@ export function TalentDetailView({
         <span>Talent Dossier</span>
       </header>
       <div className="artist-header">
-        <img src={talent.portraitUrl} alt={talent.name} />
+        <PortfolioImage size={384} src={talent.portraitUrl} alt={talent.name} />
         <div>
           <p className="metadata">{talent.category}</p>
           <h1>{talent.name}</h1>
@@ -42,7 +43,7 @@ export function TalentDetailView({
       </div>
       <section>
         <h2>
-          Collaborative Releases <span className="secondary count">{releases.length}</span>
+          Collaborative Projects <span className="secondary count">{releases.length}</span>
         </h2>
         {releases.length ? (
           <div className="track-list">

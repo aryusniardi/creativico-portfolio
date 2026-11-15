@@ -11,7 +11,7 @@ with sync_playwright() as p:
  for width,height in [(390,844),(768,1024),(1440,1000)]:
   page.set_viewport_size({'width':width,'height':height})
   page.goto(args.url,wait_until='networkidle')
-  page.get_by_role('heading',name='Home',exact=True).wait_for()
+  page.get_by_role('heading',name='Portfolio',exact=True).wait_for()
   nav=page.get_by_role('navigation',name='Main navigation')
   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
   frame=page.locator('.music-app').bounding_box()
@@ -56,10 +56,13 @@ with sync_playwright() as p:
   assert bounds['width']<=frame['width']
   assert bounds['height']<=frame['height']
 
-  assert dialog.get_by_role('link',name='Open YouTube').get_attribute('href')=='https://youtu.be/0ERR5BCTcYo'
+  embedded=dialog.locator('iframe[title$="— YouTube video"]')
+  assert '/embed/0ERR5BCTcYo?' in embedded.get_attribute('src')
+  assert 'autoplay=1' in embedded.get_attribute('src')
+  assert dialog.get_by_role('link',name='Open original on YouTube').get_attribute('href')=='https://youtu.be/0ERR5BCTcYo'
   assert dialog.get_by_role('button',name='Previous media').is_disabled()
   dialog.get_by_role('button',name='Next media').click()
-  assert dialog.locator('.viewer-stage > img').is_visible()
+  dialog.locator('.viewer-stage > img').wait_for(state='visible')
   assert dialog.locator('.media-position').inner_text()=='2 of 5'
   page.screenshot(path=f'/private/tmp/creativico-image-{width}.png')
   assert dialog.get_by_role('heading',name='Creative Notes',exact=True).is_visible()

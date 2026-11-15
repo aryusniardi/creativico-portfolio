@@ -210,7 +210,7 @@ h3 {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   border-radius: 8px;
   background: var(--surface);
 }
@@ -416,7 +416,7 @@ h3 {
   width: min(78%, 320px);
   aspect-ratio: 1;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   border-radius: 10px;
   background: var(--surface);
 }
@@ -660,6 +660,19 @@ h3 {
   max-height: 45cqh;
   object-fit: contain;
   border-radius: 8px;
+}
+.viewer-stage > iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 200px;
+  border: 0;
+  border-radius: 8px;
+}
+.viewer-source {
+  display: block;
+  margin-top: 12px;
+  text-align: center;
+  text-decoration: underline;
 }
 .external-preview {
   width: 100%;

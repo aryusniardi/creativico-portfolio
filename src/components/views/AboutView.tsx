@@ -1,3 +1,4 @@
+import { PortfolioImage } from "../content/PortfolioImage";
 import { Mail, Phone, ArrowUpRight } from "lucide-react";
 import { useContent } from "../content/ContentContext";
 
@@ -9,7 +10,7 @@ export function AboutView() {
         <h1>About &amp; Profile</h1>
       </header>
       <div className="profile-header">
-        <img src={PROFILE.portraitUrl} alt={PROFILE.name} />
+        <PortfolioImage size={192} src={PROFILE.portraitUrl} alt={PROFILE.name} />
         <div>
           <h2>{PROFILE.name}</h2>
           <p className="accent">{PROFILE.headline}</p>
