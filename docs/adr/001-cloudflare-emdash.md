@@ -25,6 +25,8 @@ The Worker deployment requires D1 and R2 bindings in Wrangler configuration and 
 
 The Pages redirect is a compatibility layer, not the application runtime. It must be updated after each Worker deploy until the old Pages hostname is replaced with a direct Worker route or custom domain.
 
+Media delivery uses EmDash’s native Cloudflare Images binding to produce size-bound WebP responses while preserving R2 originals. Failed transforms fall back to the original image. No Images subscription upgrade is performed. YouTube embeds are created from allowlisted provider URLs only while the viewer is open.
+
 ## Alternatives considered
 
 - Static Pages only: rejected because EmDash's database, uploads, authentication, and admin API need a server runtime.

@@ -27,6 +27,9 @@ work['kind']=[0,'video'];work['videoUrl']=[0,'/__test-video.mp4']
 missing=next(item[1] for item in media if item[1]['id'][1]=='work-harry-still')
 missing['imageUrl']=[0,'/__test-image.webp']
 source=re.sub(r'props="[^"]*"',lambda match:'props="'+escape(json.dumps(parser.props),quote=True)+'"',source,count=1)
+# Changed fixture props must not hydrate the original server-rendered media labels.
+source=source.replace('client="load"','client="only"',1)
+source=source.replace('<astro-island','<script>window.Astro.only=window.Astro.load;</script><astro-island',1)
 with sync_playwright() as p:
  browser=p.chromium.launch()
  page=browser.new_page(viewport={'width':390,'height':844})

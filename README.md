@@ -75,3 +75,5 @@ Push to `development` deploys preview; push or merge to `main` deploys productio
 - 2026-11-15 — Hid scrollbars and the simulated status row; added mouse drag scrolling alongside native touch gestures; made Notes permanent and fixed viewer content overlap.
 
 - 2026-11-15 — Enabled live Cloudflare Workers/EmDash with isolated D1/R2 production and preview, native passkey admin access, draft revisions before publishing, and GitHub Actions deployment for main/development. Documented account separation and CMS access.
+
+- 2026-11-15 — Replaced ON REPEAT branding with portfolio SEO, added canonical/social/Person metadata and preview noindex, centered square artwork with CMS guidance, enabled non-destructive WebP delivery with early-error fallback, and embedded YouTube videos/playlists. Verified 14 tests, three viewports, CMS PNG/WebP delivery, and native video controls.
