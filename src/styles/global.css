@@ -653,13 +653,21 @@ h3 {
   align-items: center;
   justify-content: center;
 }
-.viewer-stage > img,
-.viewer-stage > video {
-  width: 100%;
+.viewer-stage > img {
+  max-width: 100%;
+  width: auto;
   height: auto;
-  max-height: 45cqh;
-  object-fit: contain;
   border-radius: 8px;
+  background: var(--surface);
+}
+.viewer-stage > video {
+  width: min(100%, calc(50cqh * 9 / 16));
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 8px;
+  background: #000;
 }
 .viewer-stage > iframe {
   width: 100%;
